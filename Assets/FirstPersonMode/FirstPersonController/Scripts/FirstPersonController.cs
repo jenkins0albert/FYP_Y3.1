@@ -51,6 +51,11 @@ namespace StarterAssets
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
 
+		
+
+
+
+
 		// cinemachine
 		private float _cinemachineTargetPitch;
 
@@ -64,7 +69,7 @@ namespace StarterAssets
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
-	
+
 #if ENABLE_INPUT_SYSTEM
 		private PlayerInput _playerInput;
 #endif
@@ -78,11 +83,11 @@ namespace StarterAssets
 		{
 			get
 			{
-				#if ENABLE_INPUT_SYSTEM
+#if ENABLE_INPUT_SYSTEM
 				return _playerInput.currentControlScheme == "KeyboardMouse";
-				#else
+#else
 				return false;
-				#endif
+#endif
 			}
 		}
 
@@ -93,7 +98,11 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
+
+			
 		}
+
+		
 
 		private void Start()
 		{
@@ -108,13 +117,20 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+
+			
+			
 		}
 
 		private void Update()
 		{
-			JumpAndGravity();
+            
+            JumpAndGravity();
 			GroundedCheck();
 			Move();
+
+			
+
 		}
 
 		private void LateUpdate()
