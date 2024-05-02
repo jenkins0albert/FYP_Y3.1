@@ -23,6 +23,8 @@ public class PlayerInteraction : MonoBehaviour
 
     public TextMeshProUGUI hoverText;
 
+    private Inventory inventory;
+
 
     public void OnInteract()
     {
@@ -144,6 +146,7 @@ public class PlayerInteraction : MonoBehaviour
     private void Awake()
     {
         hoverText.text = " ";
+        inventory = new Inventory();
     }
 
     void Update()
