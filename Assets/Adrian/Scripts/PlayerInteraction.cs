@@ -49,7 +49,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             currentInteractable.Interact();
 
-           
+            inventory.AddItem(currentInteractable.GetInstanceID, currentInteractable.displayName);
         }
     }
     void checkInteraction()
@@ -139,6 +139,8 @@ public class PlayerInteraction : MonoBehaviour
         dialogueCheck = dialogueManager.GetComponent<DialogueManager>();
 
         hoverText.text = " ";
+
+        inventory = GetComponent<Inventory>(); //karamina
 
     }
 

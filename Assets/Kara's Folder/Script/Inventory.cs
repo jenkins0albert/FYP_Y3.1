@@ -1,21 +1,28 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory 
+public class Inventory : MonoBehaviour
 {
-    private List<Items> itemList;
+    private Dictionary<string, string> items = new Dictionary<string, string>(); // dictionary to store items
 
-    public Inventory()
+    public void AddItem(string itemID, string itemName)
     {
-        itemList = new List<Items>();
-
-        AddItem(new Items { itemType = Items.ItemType.ID, amount = 1 });
-        Debug.Log(itemList.Count);
+        items.Add(itemID, itemName);
+        UpdateInventory();
     }
- 
-    public void AddItem(Items item)
+
+    private void UpdateInventory()
     {
-        itemList.Add(item);
+        Debug.Log("Inventory:");
+        int slotCount = 4; // no. of slots in the inventory
+        for (int i = 0; i < slotCount; i++)
+        {
+            string item = "None";
+            if (items.ContainsKey(i.ToString()))
+            {
+                item = items[i.ToString()];
+            }
+            Debug.Log($"Slot {i + 1}: {item}");
+        }
     }
 }
