@@ -23,8 +23,6 @@ public class PlayerInteraction : MonoBehaviour
 
     public TextMeshProUGUI hoverText;
 
-    private Inventory inventory;
-
 
     public void OnInteract()
     {
@@ -49,7 +47,6 @@ public class PlayerInteraction : MonoBehaviour
         {
             currentInteractable.Interact();
 
-            inventory.AddItem(currentInteractable.GetInstanceID, currentInteractable.displayName);
         }
     }
     void checkInteraction()
@@ -140,15 +137,12 @@ public class PlayerInteraction : MonoBehaviour
 
         hoverText.text = " ";
 
-        inventory = GetComponent<Inventory>(); //karamina
-
     }
 
     
     private void Awake()
     {
         hoverText.text = " ";
-        inventory = new Inventory();
     }
 
     void Update()
