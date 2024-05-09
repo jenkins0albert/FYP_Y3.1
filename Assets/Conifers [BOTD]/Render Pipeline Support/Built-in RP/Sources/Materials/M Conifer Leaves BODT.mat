@@ -8,27 +8,32 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M Conifer Leaves BODT
-  m_Shader: {fileID: 4800000, guid: 6934a0dff195b47e5913f17edb3770ec, type: 3}
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 2100000, guid: fcbc9e998124d414da7cb0d951f649a3, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 24
   m_ValidKeywords:
-  - _METALLICGLOSSMAP
+  - _ALPHAPREMULTIPLY_ON
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords:
   - GEOM_TYPE_LEAF
-  - _ALPHAPREMULTIPLY_ON
-  - _EMISSION
-  - _NORMALMAP
-  - _SPECULARHIGHLIGHTS_OFF
+  - _METALLICGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
+  - SHADOWCASTER
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: d7ffe1fa944f34298b984303aca8ae36, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpSpecAOMap:
         m_Texture: {fileID: 2800000, guid: 37fe0b5bbca93450593b8790186bf777, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -42,7 +47,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5597dc21a8aed4e7ba2c0f93dc4b1d98, type: 3}
+        m_Texture: {fileID: 2800000, guid: d7ffe1fa944f34298b984303aca8ae36, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTexArray:
@@ -55,14 +60,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Cull: 0
     - _Cutoff: 0.5
     - _DstBlend: 10
+    - _DstBlendAlpha: 10
     - _EdgeFlutterInfluence: 0
     - _EnableAdvancedEdgeBending: 1
     - _EnableLeafTurbulence: 1
     - _IsBark: 0
     - _LeafTurbulence: 0.1
+    - _Metallic: 0.116
     - _Mode: 3
+    - _Surface: 1
     - _TranslucencyStrength: 1
     - _TumbleFrequency: 0.6
     - _TumbleStrength: 0.012
@@ -70,5 +79,6 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _AdvancedEdgeBending: {r: 0.6, g: 1.3, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.18826629, g: 0.8301887, b: 0.16838734, a: 1}
+    - _Color: {r: 0.18826625, g: 0.8301887, b: 0.1683873, a: 1}
   m_BuildTextureStacks: []
