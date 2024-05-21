@@ -190,7 +190,11 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
+<<<<<<< HEAD
                     "groups": "",
+=======
+                    "groups": "KeyboardMouse",
+>>>>>>> 166e86e01c022fb5c9604d14cf09e7c5f89660e8
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false

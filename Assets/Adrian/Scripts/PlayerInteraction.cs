@@ -47,7 +47,10 @@ public class PlayerInteraction : MonoBehaviour
         {
             currentInteractable.Interact();
 
+<<<<<<< HEAD
            
+=======
+>>>>>>> 166e86e01c022fb5c9604d14cf09e7c5f89660e8
         }
     }
     void checkInteraction()
