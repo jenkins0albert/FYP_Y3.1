@@ -6,10 +6,15 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static Unity.Burst.Intrinsics.Arm;
 using UnityEngine.SceneManagement;
-
+using Inventory;
+using Inventory.UI;
+using Inventory.Model;
+using static UnityEditor.Progress;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    [SerializeField]
+    private InventorySO inventoryData;
 
     public float PlayerReach = 3f;
     Interactable currentInteractable;
@@ -17,13 +22,20 @@ public class PlayerInteraction : MonoBehaviour
 
     private GameObject _mainCamera;
 
-
+    
     private DialogueManager dialogueCheck;
     public GameObject dialogueManager;
 
     public TextMeshProUGUI hoverText;
 
 
+
+    [SerializeField]
+    private UIInventory inventoryUI;
+    [SerializeField]
+    private UIInventoryControls inventoryControls;
+    
+    
     public void OnInteract()
     {
 
@@ -35,6 +47,7 @@ public class PlayerInteraction : MonoBehaviour
         }
         else 
         {
+
             InteractObject();
         }
 
@@ -47,11 +60,29 @@ public class PlayerInteraction : MonoBehaviour
         {
             currentInteractable.Interact();
 
-<<<<<<< HEAD
-           
-=======
->>>>>>> 166e86e01c022fb5c9604d14cf09e7c5f89660e8
+            ItemPickup item = currentInteractable.GetComponent<ItemPickup>();
+            if (item != null)
+            {
+                int reminder = inventoryData.AddItem(item.InventoryItem, item.Quantity);
+                if (reminder == 0)
+                {
+                    currentInteractable.Interact();
+                }
+
+                else
+                {
+                    item.Quantity = reminder;
+                }
+
+            }
+
+
+
+
+
         }
+
+        
     }
     void checkInteraction()
     {
@@ -61,7 +92,8 @@ public class PlayerInteraction : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, PlayerReach))
         {
-           
+
+            
 
             if (hit.collider.tag == "Interactable")
             {
@@ -70,6 +102,9 @@ public class PlayerInteraction : MonoBehaviour
 
                 
                 Interactable newInteractable = hit.collider.GetComponent<Interactable>();
+               
+
+               
 
                 
 
@@ -125,10 +160,16 @@ public class PlayerInteraction : MonoBehaviour
         if (currentInteractable)
         {
             currentInteractable = null;
-            hoverText.text = " ";
+            hoverText.text = "";
         }
     }
 
+    
+    public void OnInventory()
+    {
+        inventoryControls.ShowInventory();
+        Debug.Log("sada");
+    }
 
     void Start()
     {
@@ -142,6 +183,15 @@ public class PlayerInteraction : MonoBehaviour
         hoverText.text = " ";
 
     }
+
+    
+
+   
+
+
+
+
+    
 
     
     private void Awake()

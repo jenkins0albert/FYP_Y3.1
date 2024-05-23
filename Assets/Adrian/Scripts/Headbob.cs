@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 
@@ -12,8 +13,12 @@ public class Headbob : MonoBehaviour
     [SerializeField, Range(0, 30)] private float _frequency = 10f; //frequency controls speed -Adrian
     [SerializeField, Range(0, 30)] private float _smoothness = 10f; //frequency controls speed -Adrian
 
-    Vector3 StartPos;
+    [SerializeField]
+    private FirstPersonController playerController;
 
+    
+    Vector3 StartPos;
+    
     private void Start()
     {
         StartPos = Vector3.zero;
@@ -38,8 +43,8 @@ public class Headbob : MonoBehaviour
     private Vector3 StartHeadbob()
     {
         Vector3 pos = Vector3.zero;
-        pos.y += Mathf.Lerp(pos.y, Mathf.Sin(Time.time * _frequency) * _amplitude * 1.4f, _smoothness * Time.deltaTime);
-        pos.x += Mathf.Lerp(pos.x, Mathf.Cos(Time.time * _frequency / 2f) * _amplitude * 1.6f, _smoothness * Time.deltaTime);
+        pos.y += Mathf.Lerp(pos.y, Mathf.Sin(Time.time * _frequency) * _amplitude * 1.4f, _smoothness * Time.deltaTime * playerController.MoveSpeed);
+        pos.x += Mathf.Lerp(pos.x, Mathf.Cos(Time.time * _frequency / 2f) * _amplitude * 1.6f, _smoothness * Time.deltaTime *playerController.MoveSpeed);
         transform.localPosition += pos;
 
 

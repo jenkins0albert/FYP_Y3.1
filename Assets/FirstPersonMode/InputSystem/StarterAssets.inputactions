@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "4f47d192-aed7-4ba5-b2f6-81a009403f36",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -190,12 +199,19 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-<<<<<<< HEAD
                     "groups": "",
-=======
-                    "groups": "KeyboardMouse",
->>>>>>> 166e86e01c022fb5c9604d14cf09e7c5f89660e8
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e94cdae-8a66-4953-9199-226bd2623c45",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

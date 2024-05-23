@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using TMPro;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
@@ -14,6 +15,9 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<DialogueLines> lines;
 
+    [SerializeField]
+    private FirstPersonController playerController;
+
     public bool isDialogueactive = false;
     public float typingspeed = 0.05f;
     public Animator animator;
@@ -22,6 +26,9 @@ public class DialogueManager : MonoBehaviour
     {
         isDialogueactive = true;
         animator.Play("DialogueIn");
+
+        playerController.MoveSpeed = 0f;
+        playerController.JumpHeight = 0f;
 
         lines.Clear();
 
@@ -72,6 +79,9 @@ public class DialogueManager : MonoBehaviour
     {
         isDialogueactive = false;
         animator.Play("DialogueOut");
+
+        playerController.MoveSpeed = 4f;
+        playerController.JumpHeight = 1.2f;
     }
 
     private void Awake()
