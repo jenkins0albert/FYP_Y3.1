@@ -86,3 +86,24 @@ ProjectSettings/._ShaderGraphSettings.asset
 ._Temp
 Assets/._New Terrain.asset
 Assets/Danette/Scenes/._DIDanetteWHITEBOX.unity
+._.vscode
+.vscode/._extensions.json
+.vscode/._launch.json
+.vscode/._settings.json
+.vscode/extensions.json
+.vscode/launch.json
+.vscode/settings.json
+Assets/Danette/Script/._LIghtTrigger.cs
+Assets/Danette/Script/._LIghtTrigger.cs.meta
+Assets/Danette/Script/LIghtTrigger.cs
+Assets/Danette/Script/LIghtTrigger.cs.meta
+ProjectSettings/._BurstAotSettings_Android.json
+ProjectSettings/._BurstAotSettings_iOS.json
+ProjectSettings/._BurstAotSettings_StandaloneOSX.json
+ProjectSettings/._CommonBurstAotSettings.json
+ProjectSettings/._TimelineSettings.asset
+ProjectSettings/BurstAotSettings_Android.json
+ProjectSettings/BurstAotSettings_iOS.json
+ProjectSettings/BurstAotSettings_StandaloneOSX.json
+ProjectSettings/CommonBurstAotSettings.json
+ProjectSettings/TimelineSettings.asset
