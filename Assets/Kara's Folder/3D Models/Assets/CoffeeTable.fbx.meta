@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: WhiteOak
-    second: {fileID: 2100000, guid: d1bc571d0f66249b3b3142ddcbb4c51f, type: 2}
+      name: lambert15
+    second: {fileID: 2100000, guid: 22b02414c9b314d55bca70307e822e94, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: light-brown-wooden-textured-background
+    second: {fileID: 2800000, guid: 9e572a52c6f124ac5883c74f70df09ec, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
