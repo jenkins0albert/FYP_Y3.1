@@ -13,6 +13,10 @@ using static UnityEditor.Progress;
 
 public class PlayerInteraction : MonoBehaviour
 {
+
+    
+    public bool bagCollected = false;
+
     [SerializeField]
     private InventorySO inventoryData;
 
@@ -111,7 +115,9 @@ public class PlayerInteraction : MonoBehaviour
 
                 if (currentInteractable && newInteractable != currentInteractable)
                 {
-                    Debug.Log("DisableOutline");
+                   
+                    currentInteractable.DisableOutline();
+                    
                     hoverText.text = " ";
                 }
 
@@ -151,7 +157,10 @@ public class PlayerInteraction : MonoBehaviour
     void SetNewCurrentInteractable(Interactable newInteractable)
     {
         currentInteractable = newInteractable;
-
+        
+        currentInteractable.EnableOutline();
+        
+        
 
     }
 
@@ -159,6 +168,9 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (currentInteractable)
         {
+            
+            currentInteractable.DisableOutline();
+            
             currentInteractable = null;
             hoverText.text = "";
         }
@@ -167,8 +179,12 @@ public class PlayerInteraction : MonoBehaviour
     
     public void OnInventory()
     {
-        inventoryControls.ShowInventory();
-        Debug.Log("sada");
+        if (bagCollected)
+        {
+            inventoryControls.ShowInventory();
+            Debug.Log("sada");
+        }
+       
     }
 
     void Start()

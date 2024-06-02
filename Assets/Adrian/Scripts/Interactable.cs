@@ -9,19 +9,34 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-    
+    Outline outline;
     public string hoverMsg;
     public UnityEvent onInteraction;
 
+    void Start()
+    {
+        outline = GetComponent<Outline>();
+        DisableOutline();
+
+
+            
+    }
     public void Interact()
     {
         onInteraction.Invoke();
+        
 
     }
-    void Start()
+    public void DisableOutline()
     {
-        
+        outline.enabled = false;
     }
+
+    public void EnableOutline()
+    {
+        outline.enabled = true;
+    }
+    
 
     
 }
