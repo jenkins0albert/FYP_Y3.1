@@ -106,20 +106,20 @@ public class PlayerInteraction : MonoBehaviour
 
                 
                 Interactable newInteractable = hit.collider.GetComponent<Interactable>();
-               
 
-               
 
-                
+
+
 
 
                 if (currentInteractable && newInteractable != currentInteractable)
                 {
-                   
+
                     currentInteractable.DisableOutline();
-                    
+
                     hoverText.text = " ";
                 }
+
 
                 if (newInteractable.enabled) 
                 {
@@ -138,6 +138,8 @@ public class PlayerInteraction : MonoBehaviour
                     DisableInteraction();
                     hoverText.text = " ";
                 }
+
+                
 
             }
 

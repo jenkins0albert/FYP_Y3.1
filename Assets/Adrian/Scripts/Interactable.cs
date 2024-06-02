@@ -29,12 +29,19 @@ public class Interactable : MonoBehaviour
     }
     public void DisableOutline()
     {
-        outline.enabled = false;
+        if (this.gameObject != null)
+        {
+            outline.enabled = false;
+        }
+       
     }
 
     public void EnableOutline()
     {
-        outline.enabled = true;
+        if (this.gameObject != null)
+        {
+            outline.enabled = true;
+        }
     }
     
 

@@ -45,6 +45,6 @@ public class ItemPickup : MonoBehaviour
                 Vector3.Lerp(startScale, endScale, currentTime / duration);
             yield return null;
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
