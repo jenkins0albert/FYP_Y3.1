@@ -81,7 +81,7 @@ public class DialogueManager : MonoBehaviour
         animator.Play("DialogueOut");
 
         playerController.MoveSpeed = 4f;
-        playerController.JumpHeight = 1.2f;
+        playerController.JumpHeight = 0.7f;
     }
 
     private void Awake()
