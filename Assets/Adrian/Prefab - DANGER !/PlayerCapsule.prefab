@@ -778,7 +778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bagCollected: 0
   inventoryData: {fileID: 11400000, guid: 39571388cee5b7143bd81ecb178fd0fd, type: 2}
-  PlayerReach: 1
+  PlayerReach: 2.5
   dialogueManager: {fileID: 4185119501227840626}
   hoverText: {fileID: 3498691211983976957}
   inventoryUI: {fileID: 2660592437042269730}
