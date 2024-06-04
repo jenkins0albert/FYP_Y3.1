@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
@@ -735,6 +735,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Streetlamp (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378632019790052063, guid: b124c21ac44bddf4eb98fbc0ab5265b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
