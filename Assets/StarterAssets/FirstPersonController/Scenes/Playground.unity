@@ -1818,17 +1818,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 85e56225aba35c1419bb65c544f1d8b1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0066412
+      value: 0.0076393723
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 85e56225aba35c1419bb65c544f1d8b1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.012678425
+      value: 0.014583993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 85e56225aba35c1419bb65c544f1d8b1,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0066412
+      value: 0.0076393723
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 85e56225aba35c1419bb65c544f1d8b1,
         type: 3}
