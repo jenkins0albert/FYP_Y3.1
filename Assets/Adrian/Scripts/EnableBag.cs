@@ -1,21 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class EnableBag : MonoBehaviour
 {
-    
-    public PlayerInteraction playerInteraction;
+    [SerializeField]
+    private PlayerInteraction playerInteraction;
 
     // Start is called before the first frame update
-    public void BagCollected()
+    
+
+    public void OnEnable()
     {
-       playerInteraction.bagCollected = true;
+        Debug.Log("sceneloaded");
+        playerInteraction = FindObjectOfType<PlayerInteraction>();
     }
-    public void Start()
+
+    public void Awake()
     {
         PlayerInteraction playerInteraction = GetComponent<PlayerInteraction>();
+
     }
+    public void BagCollected()
+    {
+        playerInteraction.bagCollected = true;
+    }
+
+
     // Update is called once per frame
     void Update()
     {

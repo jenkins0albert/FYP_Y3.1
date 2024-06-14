@@ -14,21 +14,52 @@ public class SceneChanger : MonoBehaviour
     [SerializeField]
     private float duration = 0.4f;
 
+    [SerializeField]
+    private GameObject transitionIn;
+
+    [SerializeField]
+    private GameObject transitionOut;
 
     public void ChangeScene()
     {
+        transitionOut.SetActive(true);
         StartCoroutine(AnimateTransition(sceneNum));
     }
 
     private IEnumerator AnimateTransition(int sceneNum)
     {
+        
         transition.Play("New Animation");
-
+        
+        
         yield return new WaitForSeconds(duration);
         SceneManager.LoadSceneAsync(sceneNum);
         
 
 
+    }
+
+    private void SetTransInactive()
+    {
+        transitionIn.SetActive(false);
+        transitionOut.SetActive(false);
+    }
+    private  IEnumerator setTransitionInactive()
+    {
+        
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("asdsadasd");
+        SetTransInactive();
+
+
+
+    }
+
+    public void OnEnable()
+    {
+        transitionIn.SetActive(true);
+        transitionOut.SetActive(true);
+        StartCoroutine(setTransitionInactive());
     }
 
     public void SceneTwo()
