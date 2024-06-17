@@ -4597,6 +4597,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 1130269464781404151, guid: 6c408f40aa9ed4568ba63e0b50ecf306,
+        type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4605,6 +4610,22 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1503608515}
+    - targetCorrespondingSourceObject: {fileID: 1130269464781404151, guid: 6c408f40aa9ed4568ba63e0b50ecf306,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503608518}
+    - targetCorrespondingSourceObject: {fileID: 1130269464781404151, guid: 6c408f40aa9ed4568ba63e0b50ecf306,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503608517}
+    - targetCorrespondingSourceObject: {fileID: 1130269464781404151, guid: 6c408f40aa9ed4568ba63e0b50ecf306,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503608516}
+    - targetCorrespondingSourceObject: {fileID: 1130269464781404151, guid: 6c408f40aa9ed4568ba63e0b50ecf306,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503608519}
   m_SourcePrefab: {fileID: 100100000, guid: 6c408f40aa9ed4568ba63e0b50ecf306, type: 3}
 --- !u!1001 &1099459890
 PrefabInstance:
@@ -6152,6 +6173,84 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3459533975586295541, guid: ab9409e643b690f4ab4760cb47e788f5, type: 3}
+--- !u!114 &1503608516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503608513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a49b27cb497d89428e4d3513cb36904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialoguelines:
+    - character:
+        name: 
+      line: I still need something...
+--- !u!114 &1503608517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503608513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4288bd98c820cb5488a1ff4752e721f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMsg: Open [E]
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1503608516}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1503608518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503608513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1503608519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503608513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1677be0f24bc95d449b3882cfa8773d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bagcollected: {fileID: 140880283}
+  trigger: {fileID: 1503608516}
+  playerInteraction: {fileID: 0}
 --- !u!1001 &1505522419
 PrefabInstance:
   m_ObjectHideFlags: 0
