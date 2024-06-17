@@ -16,5 +16,5 @@ MonoBehaviour:
   <maxStackSize>k__BackingField: 10
   <Name>k__BackingField: Key
   <Description>k__BackingField: Opens things
-  <sprite>k__BackingField: {fileID: 10901, guid: 0000000000000000f000000000000000,
-    type: 0}
+  <sprite>k__BackingField: {fileID: 21300000, guid: 852058ebf043af645ab4ff82c4012a32,
+    type: 3}
