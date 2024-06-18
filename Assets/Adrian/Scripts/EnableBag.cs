@@ -9,6 +9,7 @@ public class EnableBag : MonoBehaviour
     [SerializeField]
     private PlayerInteraction playerInteraction;
 
+    public GameObject bagUI;
     // Start is called before the first frame update
     
 
@@ -16,6 +17,7 @@ public class EnableBag : MonoBehaviour
     {
         Debug.Log("sceneloaded");
         playerInteraction = FindObjectOfType<PlayerInteraction>();
+       
     }
 
     public void Awake()
@@ -26,6 +28,7 @@ public class EnableBag : MonoBehaviour
     public void BagCollected()
     {
         playerInteraction.bagCollected = true;
+        
     }
 
 

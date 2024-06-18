@@ -13,7 +13,12 @@ namespace Inventory
         [SerializeField]
         private UIInventory uiInventory;
 
-        
+        [SerializeField]
+        private GameObject bagUI;
+
+        [SerializeField]
+        private GameObject phoneUI;
+
 
         public bool InventoryOpen = false;
         [SerializeField]
@@ -117,6 +122,8 @@ namespace Inventory
             {
                 InventoryOpen = true;
 
+                bagUI.SetActive(false);
+                phoneUI.SetActive(false);
 
                 uiInventory.Show();
                 foreach (var item in inventoryData.GetCurrentInventoryState())
@@ -130,6 +137,8 @@ namespace Inventory
 
             else
             {
+                bagUI.SetActive(true);
+                phoneUI.SetActive(true);
 
                 InventoryOpen = false;
                 uiInventory.Hide();

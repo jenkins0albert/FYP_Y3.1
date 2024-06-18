@@ -32,13 +32,13 @@ public class PlayerInteraction : MonoBehaviour
 
     public TextMeshProUGUI hoverText;
 
-
+    public GameObject bagUI;
 
     [SerializeField]
     private UIInventory inventoryUI;
     [SerializeField]
     private UIInventoryControls inventoryControls;
-    
+
     
     public void OnInteract()
     {
@@ -57,6 +57,9 @@ public class PlayerInteraction : MonoBehaviour
 
 
     }
+
+    
+
     // Update is called once per frame
     public void InteractObject()
     {
@@ -221,7 +224,17 @@ public class PlayerInteraction : MonoBehaviour
     {
         checkInteraction();
 
-        
+
+        //////////////////////////////
+        if (bagCollected == true)
+        {
+            bagUI.SetActive(true);
+        }
+        if (inventoryControls.InventoryOpen == true)
+        {
+            bagUI.SetActive(false);
+        }
+        /////////////////////////////
 
     }
 

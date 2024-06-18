@@ -378,6 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInteraction: {fileID: 0}
+  bagUI: {fileID: 0}
 --- !u!1001 &150545553
 PrefabInstance:
   m_ObjectHideFlags: 0
