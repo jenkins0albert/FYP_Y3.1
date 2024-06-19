@@ -39,7 +39,10 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField]
     private UIInventoryControls inventoryControls;
 
-    
+    public bool phoneOpen = false;
+    public GameObject phone;
+    public TextMeshProUGUI phoneText;
+
     public void OnInteract()
     {
 
@@ -58,7 +61,33 @@ public class PlayerInteraction : MonoBehaviour
 
     }
 
-    
+    public void OnPhone()
+    {
+        if (phoneOpen == false)
+        {
+            phoneOpen = true;
+            phone.SetActive(true);
+            phone.GetComponent<Animator>().Play("phoneUP");
+        }
+
+        else
+        {
+            phoneOpen = false;
+            
+            StartCoroutine(PhoneActive());
+            
+        }
+    }
+
+    private IEnumerator PhoneActive()
+    {
+        phone.GetComponent<Animator>().Play("phoneDOWN");
+        yield return new WaitForSeconds(0.1f);
+        phone.SetActive(false);
+
+
+
+    }
 
     // Update is called once per frame
     public void InteractObject()
