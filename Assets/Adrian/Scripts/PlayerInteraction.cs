@@ -141,20 +141,18 @@ public class PlayerInteraction : MonoBehaviour
 
 
 
-
-
-
-                if (currentInteractable && newInteractable != currentInteractable)
-                {
+                
+               if (currentInteractable && newInteractable != currentInteractable)
+               {
 
                     currentInteractable.DisableOutline();
 
                     hoverText.text = " ";
-                }
+               }
 
 
-                if (newInteractable.enabled) 
-                {
+               if (newInteractable.isActiveAndEnabled)
+               {
                     SetNewCurrentInteractable(newInteractable);
                     hoverText.text = newInteractable.hoverMsg;
 
@@ -162,7 +160,7 @@ public class PlayerInteraction : MonoBehaviour
                     {
                         hoverText.text = " ";
                     }
-                }
+               }
 
 
                 else
@@ -170,6 +168,10 @@ public class PlayerInteraction : MonoBehaviour
                     DisableInteraction();
                     hoverText.text = " ";
                 }
+                
+
+
+                
 
                 
 
