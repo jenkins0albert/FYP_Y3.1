@@ -32,14 +32,17 @@ public class PlayerInteraction : MonoBehaviour
 
     public TextMeshProUGUI hoverText;
 
-
+    public GameObject bagUI;
 
     [SerializeField]
     private UIInventory inventoryUI;
     [SerializeField]
     private UIInventoryControls inventoryControls;
-    
-    
+
+    public bool phoneOpen = false;
+    public GameObject phone;
+    public TextMeshProUGUI phoneText;
+
     public void OnInteract()
     {
 
@@ -57,6 +60,35 @@ public class PlayerInteraction : MonoBehaviour
 
 
     }
+
+    public void OnPhone()
+    {
+        if (phoneOpen == false)
+        {
+            phoneOpen = true;
+            phone.SetActive(true);
+            phone.GetComponent<Animator>().Play("phoneUP");
+        }
+
+        else
+        {
+            phoneOpen = false;
+            
+            StartCoroutine(PhoneActive());
+            
+        }
+    }
+
+    private IEnumerator PhoneActive()
+    {
+        phone.GetComponent<Animator>().Play("phoneDOWN");
+        yield return new WaitForSeconds(0.1f);
+        phone.SetActive(false);
+
+
+
+    }
+
     // Update is called once per frame
     public void InteractObject()
     {
@@ -109,20 +141,18 @@ public class PlayerInteraction : MonoBehaviour
 
 
 
-
-
-
-                if (currentInteractable && newInteractable != currentInteractable)
-                {
+                
+               if (currentInteractable && newInteractable != currentInteractable)
+               {
 
                     currentInteractable.DisableOutline();
 
                     hoverText.text = " ";
-                }
+               }
 
 
-                if (newInteractable.enabled) 
-                {
+               if (newInteractable.isActiveAndEnabled)
+               {
                     SetNewCurrentInteractable(newInteractable);
                     hoverText.text = newInteractable.hoverMsg;
 
@@ -130,7 +160,7 @@ public class PlayerInteraction : MonoBehaviour
                     {
                         hoverText.text = " ";
                     }
-                }
+               }
 
 
                 else
@@ -138,6 +168,10 @@ public class PlayerInteraction : MonoBehaviour
                     DisableInteraction();
                     hoverText.text = " ";
                 }
+                
+
+
+                
 
                 
 
@@ -221,7 +255,17 @@ public class PlayerInteraction : MonoBehaviour
     {
         checkInteraction();
 
-        
+
+        //////////////////////////////
+        if (bagCollected == true)
+        {
+            bagUI.SetActive(true);
+        }
+        if (inventoryControls.InventoryOpen == true)
+        {
+            bagUI.SetActive(false);
+        }
+        /////////////////////////////
 
     }
 

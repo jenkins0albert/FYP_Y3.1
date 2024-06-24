@@ -13,6 +13,10 @@ public class Interactable : MonoBehaviour
     public string hoverMsg;
     public UnityEvent onInteraction;
 
+
+    
+
+
     void Start()
     {
         outline = GetComponent<Outline>();
