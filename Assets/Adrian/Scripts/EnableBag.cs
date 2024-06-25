@@ -17,12 +17,18 @@ public class EnableBag : MonoBehaviour
     {
         Debug.Log("sceneloaded");
         playerInteraction = FindObjectOfType<PlayerInteraction>();
+
+        if (playerInteraction == null)
+        {
+            Debug.Log("No Player");
+        }
+
        
     }
 
-    public void Awake()
+    public void Start()
     {
-        PlayerInteraction playerInteraction = GetComponent<PlayerInteraction>();
+        playerInteraction = FindObjectOfType<PlayerInteraction>();
 
     }
     public void BagCollected()
