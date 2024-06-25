@@ -23,6 +23,7 @@
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+<<<<<<< HEAD
                 "key": "editor.showSceneInfo",
                 "value": "{\"m_Value\":false}"
             },
@@ -30,13 +31,18 @@
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "experimental.enabled",
                 "value": "{\"m_Value\":false}"
+=======
+                "key": "lightmapping.autoUnwrapLightmapUV",
+                "value": "{\"m_Value\":true}"
+>>>>>>> ec756d304b1a396892c9444c13f86d809f3aa7d7
             },
             {
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
-                "key": "ShapeComponent.ResetSettings",
+                "key": "editor.showSceneInfo",
                 "value": "{\"m_Value\":false}"
             },
             {
+<<<<<<< HEAD
                 "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "lightmapping.autoUnwrapLightmapUV",
                 "value": "{\"m_Value\":true}"
@@ -47,6 +53,8 @@
                 "value": "{\"m_Value\":false}"
             },
             {
+=======
+>>>>>>> ec756d304b1a396892c9444c13f86d809f3aa7d7
                 "type": "UnityEngine.ProBuilder.RectSelectMode, Unity.ProBuilder, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "editor.dragSelectRectMode",
                 "value": "{\"m_Value\":0}"

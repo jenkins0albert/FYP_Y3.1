@@ -790,7 +790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enable: 1
-  _amplitude: 0.006
+  _amplitude: 0.0107
   _frequency: 12
   _smoothness: 8.6
   playerController: {fileID: 2663490691805589807}
@@ -2720,22 +2720,22 @@ PrefabInstance:
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 57.9205
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -39.76975
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7816117357317638203, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
