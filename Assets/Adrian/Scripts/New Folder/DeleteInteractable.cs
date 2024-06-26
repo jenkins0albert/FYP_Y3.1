@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class DeleteInteractable : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerInteraction playerInteraction;
+    
 
     [SerializeField]
     private List<GameObject> interactable1;
+
+
+    public bool bagCollected = false;
+    public bool keyCollected = false;
 
     public void Awake()
     {
@@ -23,16 +26,33 @@ public class DeleteInteractable : MonoBehaviour
         DeleteInteraction(0);
     }
 
+    
+
+    public void CollectBagForKey()
+    {
+        bagCollected = true;
+        DeleteInteraction(0);
+    }
+
+    public void CollectKeyForWallet()
+    {
+        keyCollected = true;
+        DeleteInteraction(1);
+    }
+
+    public void CollectWalletForDoor()
+    {
+        DeleteInteraction(2);
+    }
     public void DeleteInteraction(int count) 
     {
-        playerInteraction = FindObjectOfType<PlayerInteraction>();
+        
         Interactable[] interactable = interactable1[count].GetComponents<Interactable>();
         
 
-        if (playerInteraction.bagCollected == true)
-        {
-            Destroy(interactable[0]);
-        }
+        
+        Destroy(interactable[0]);
+        
         
 
     }
