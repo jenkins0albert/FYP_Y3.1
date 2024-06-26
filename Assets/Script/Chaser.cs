@@ -9,6 +9,7 @@ using Cinemachine;
 public class Chaser : MonoBehaviour
 {
     private NavMeshAgent agentComponent;
+    private Animator animator;
 
     [SerializeField]
     private Transform player;
@@ -22,7 +23,6 @@ public class Chaser : MonoBehaviour
     [SerializeField]
     private Volume globalVolume;
     private Vignette vignette;
-
     [SerializeField]
     private float vignetteIntensity = 0.5f;
 
@@ -42,6 +42,7 @@ public class Chaser : MonoBehaviour
     private void Awake()
     {
         agentComponent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
 
         if (globalVolume.profile.TryGet<Vignette>(out Vignette vignetteComponent))
         {
@@ -86,6 +87,10 @@ public class Chaser : MonoBehaviour
                     // smooth transition for camera noise amplitude
                     targetNoiseAmplitude = 1.0f;
                     noise.m_AmplitudeGain = Mathf.Lerp(noise.m_AmplitudeGain, targetNoiseAmplitude, Time.deltaTime * noiseLerpSpeed);
+
+                    // Update animator parameters
+                    animator.SetBool("isWalking", true);
+                    animator.SetFloat("speed", agentComponent.velocity.magnitude);
                 }
                 else
                 {
@@ -99,6 +104,10 @@ public class Chaser : MonoBehaviour
 
                     targetNoiseAmplitude = 0.0f;
                     noise.m_AmplitudeGain = Mathf.Lerp(noise.m_AmplitudeGain, targetNoiseAmplitude, Time.deltaTime * noiseLerpSpeed);
+
+                    // Update animator parameters
+                    animator.SetBool("isWalking", false);
+                    animator.SetFloat("speed", 0f);
                 }
             }
             else
@@ -112,6 +121,10 @@ public class Chaser : MonoBehaviour
 
                 targetNoiseAmplitude = 0.0f;
                 noise.m_AmplitudeGain = Mathf.Lerp(noise.m_AmplitudeGain, targetNoiseAmplitude, Time.deltaTime * noiseLerpSpeed);
+
+                // Update animator parameters
+                animator.SetBool("isWalking", false);
+                animator.SetFloat("speed", 0f);
             }
         }
         else
@@ -123,6 +136,10 @@ public class Chaser : MonoBehaviour
 
             targetNoiseAmplitude = 0.0f;
             noise.m_AmplitudeGain = Mathf.Lerp(noise.m_AmplitudeGain, targetNoiseAmplitude, Time.deltaTime * noiseLerpSpeed);
+
+            // Update animator parameters
+            animator.SetBool("isWalking", false);
+            animator.SetFloat("speed", 0f);
         }
     }
 }
