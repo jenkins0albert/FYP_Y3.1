@@ -790,8 +790,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enable: 1
-  _amplitude: 0.0107
-  _frequency: 12
+  _amplitude: 0.0089
+  _frequency: 9.6
   _smoothness: 8.6
   playerController: {fileID: 2663490691805589807}
 --- !u!1 &2218131275528542599
