@@ -27,8 +27,7 @@ public class DialogueManager : MonoBehaviour
         isDialogueactive = true;
         animator.Play("DialogueIn");
 
-        playerController.MoveSpeed = 0f;
-        playerController.JumpHeight = 0f;
+        
 
         lines.Clear();
 
@@ -43,6 +42,15 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    public void Update()
+    {
+        if (isDialogueactive)
+        {
+            playerController.MoveSpeed = 0f;
+            playerController.SprintSpeed = 0f;
+            playerController.JumpHeight = 0f;
+        }
+    }
 
     public void DisplayNext()
     {
@@ -81,6 +89,7 @@ public class DialogueManager : MonoBehaviour
         animator.Play("DialogueOut");
 
         playerController.MoveSpeed = 4f;
+        playerController.SprintSpeed = 6.0f;
         playerController.JumpHeight = 0.7f;
     }
 
