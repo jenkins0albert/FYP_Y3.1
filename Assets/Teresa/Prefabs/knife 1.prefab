@@ -63,6 +63,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: knife 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3789613670357638103, guid: 901e60f893892f547850c11f815ab790,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5bf7f7554cae19349be5574a18c44ad6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
