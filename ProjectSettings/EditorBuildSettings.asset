@@ -18,13 +18,13 @@ EditorBuildSettings:
     path: Assets/Adrian/Scenes/building thing.unity
     guid: 5a5a93ba8968fce4ca3600b1872a082c
   - enabled: 1
-    path: Assets/Adrian/Scenes/built.unity
+    path: Assets/Scenes/Demo/built  (DONT DELETE KARA).unity
     guid: c18d8ba68e00533488a6f20d27ff7607
   - enabled: 1
     path: Assets/Adrian/Scenes/Starting Menu.unity
     guid: dd6a80701f7a43643992ad0c984665ca
   - enabled: 1
-    path: Assets/Adrian/Scenes/Built Cutscene.unity
+    path: Assets/Scenes/Demo/Built Cutscene (DONT DELETE KARA).unity
     guid: fb00f748b6bf36d4c9e5b8148c1572c7
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,

@@ -2348,6 +2348,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCapsule
       objectReference: {fileID: 0}
+    - target: {fileID: 2281971237981506800, guid: eb200631cb9008340be4fc779edeb664,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2651684261723733084, guid: eb200631cb9008340be4fc779edeb664,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2378,6 +2383,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -585.1621
       objectReference: {fileID: 0}
+    - target: {fileID: 2663490691805589807, guid: eb200631cb9008340be4fc779edeb664,
+        type: 3}
+      propertyPath: walkingAndRunning
+      value: 
+      objectReference: {fileID: 1568634866}
     - target: {fileID: 2942852603741107991, guid: eb200631cb9008340be4fc779edeb664,
         type: 3}
       propertyPath: m_Layer
@@ -2673,6 +2683,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6306852085111178178, guid: eb200631cb9008340be4fc779edeb664,
+        type: 3}
+      propertyPath: bagCollected
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6638436657036851215, guid: eb200631cb9008340be4fc779edeb664,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2852,7 +2867,11 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 8525913405386813366, guid: eb200631cb9008340be4fc779edeb664, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2281971237981506800, guid: eb200631cb9008340be4fc779edeb664,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1568634866}
   m_SourcePrefab: {fileID: 100100000, guid: eb200631cb9008340be4fc779edeb664, type: 3}
 --- !u!4 &231983259 stripped
 Transform:
@@ -19068,6 +19087,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2000778695}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1568634865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2281971237981506800, guid: eb200631cb9008340be4fc779edeb664,
+    type: 3}
+  m_PrefabInstance: {fileID: 228707899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1568634866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568634865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c7a7a496d5042debdd198f2268bd76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkClip: {fileID: 8300000, guid: 2921c47b0bdded540b5b813c1e60001c, type: 3}
+  runClip: {fileID: 8300000, guid: 2921c47b0bdded540b5b813c1e60001c, type: 3}
 --- !u!1001 &1576548421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23284,7 +23323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1987013801
 Transform:
   m_ObjectHideFlags: 0
@@ -23294,7 +23333,7 @@ Transform:
   m_GameObject: {fileID: 1987013800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.117, y: 0.62, z: -4.393}
+  m_LocalPosition: {x: 2.117, y: 1.98, z: -4.393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26208,6 +26247,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Monster Model (Placeholder)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461438018339200848, guid: 7d02c542a05174571826301ccc56178a,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461438018339200848, guid: 7d02c542a05174571826301ccc56178a,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010994079683919426, guid: 7d02c542a05174571826301ccc56178a,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010994079683919426, guid: 7d02c542a05174571826301ccc56178a,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6986863364075375737, guid: 7d02c542a05174571826301ccc56178a,
         type: 3}

@@ -51,8 +51,9 @@ namespace StarterAssets
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
 
-		
-
+		// change 1
+		[Header("Player Movement")]
+		public WalkingAndRunning walkingAndRunning;
 
 
 
@@ -99,6 +100,8 @@ namespace StarterAssets
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
 
+			// change2
+			walkingAndRunning = GetComponent<WalkingAndRunning>();
 			
 		}
 
@@ -129,6 +132,24 @@ namespace StarterAssets
 			GroundedCheck();
 			Move();
 
+			// change 3
+			if (_input.move.magnitude > 0.1f)
+			{
+				if (_input.sprint)
+				{
+					walkingAndRunning.PlayRunningSound();
+                    Debug.Log("Player is running.");
+                }
+				else
+				{
+					walkingAndRunning.PlayWalkingSound();
+					Debug.Log("Player is walking.");
+				}
+			}
+			else
+			{
+				walkingAndRunning.StopSounds();
+			}
 			
 
 		}

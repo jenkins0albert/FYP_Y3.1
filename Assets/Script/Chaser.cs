@@ -10,6 +10,7 @@ public class Chaser : MonoBehaviour
 {
     private NavMeshAgent agentComponent;
     private Animator animator;
+    private ChaserAudioManager audioManager;
 
     [SerializeField]
     private Transform player;
@@ -43,6 +44,7 @@ public class Chaser : MonoBehaviour
     {
         agentComponent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        audioManager = GetComponent<ChaserAudioManager>();
 
         if (globalVolume.profile.TryGet<Vignette>(out Vignette vignetteComponent))
         {
@@ -90,7 +92,10 @@ public class Chaser : MonoBehaviour
 
                     // Update animator parameters
                     animator.SetBool("isWalking", true);
-                    animator.SetFloat("speed", agentComponent.velocity.magnitude);
+                    animator.SetFloat("Speed", agentComponent.velocity.magnitude);
+
+                    // Play chasing sound
+                    audioManager.PlayChasingSound();
                 }
                 else
                 {
@@ -107,7 +112,10 @@ public class Chaser : MonoBehaviour
 
                     // Update animator parameters
                     animator.SetBool("isWalking", false);
-                    animator.SetFloat("speed", 0f);
+                    animator.SetFloat("Speed", 0f);
+
+                    // plays idle sound
+                    audioManager.PlayIdleSound();
                 }
             }
             else
@@ -122,9 +130,12 @@ public class Chaser : MonoBehaviour
                 targetNoiseAmplitude = 0.0f;
                 noise.m_AmplitudeGain = Mathf.Lerp(noise.m_AmplitudeGain, targetNoiseAmplitude, Time.deltaTime * noiseLerpSpeed);
 
-                // Update animator parameters
+                // update animator parameters
                 animator.SetBool("isWalking", false);
-                animator.SetFloat("speed", 0f);
+                animator.SetFloat("Speed", 0f);
+
+                // plays idle sound
+                audioManager.PlayIdleSound();
             }
         }
         else
@@ -137,9 +148,12 @@ public class Chaser : MonoBehaviour
             targetNoiseAmplitude = 0.0f;
             noise.m_AmplitudeGain = Mathf.Lerp(noise.m_AmplitudeGain, targetNoiseAmplitude, Time.deltaTime * noiseLerpSpeed);
 
-            // Update animator parameters
+            // update animator parameters
             animator.SetBool("isWalking", false);
-            animator.SetFloat("speed", 0f);
+            animator.SetFloat("Speed", 0f);
+
+            // plays idle sound
+            audioManager.PlayIdleSound();
         }
     }
 }
