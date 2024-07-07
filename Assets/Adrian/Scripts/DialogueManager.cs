@@ -90,7 +90,7 @@ public class DialogueManager : MonoBehaviour
 
         playerController.MoveSpeed = 4f;
         playerController.SprintSpeed = 6.0f;
-        playerController.JumpHeight = 0.7f;
+        playerController.JumpHeight = 0.0f;
     }
 
     private void Awake()
