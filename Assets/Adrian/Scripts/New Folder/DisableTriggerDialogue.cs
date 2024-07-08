@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Events;
-using UnityEditor.PackageManager;
+
+
 using UnityEngine;
 
 public class DisableTriggerDialogue : MonoBehaviour
@@ -23,7 +23,7 @@ public class DisableTriggerDialogue : MonoBehaviour
         playerInteraction = FindObjectOfType<PlayerInteraction>();
 
         Interactable interactable = this.GetComponent<Interactable>();
-        UnityEventTools.RemovePersistentListener(interactable.onInteraction, 0);
+        //UnityEventTools.RemovePersistentListener(interactable.onInteraction, 0);
 
     }
 

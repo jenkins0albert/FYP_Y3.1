@@ -8,18 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Adrian/Scenes/Playground.unity
     guid: 707acc8dffb72b144bb1ffbe1c965f3d
   - enabled: 0
     path: Assets/Adrian/Scenes/building thing.unity
     guid: 5a5a93ba8968fce4ca3600b1872a082c
   - enabled: 1
-    path: Assets/Scenes/Demo/built  (DONT DELETE KARA).unity
-    guid: c18d8ba68e00533488a6f20d27ff7607
-  - enabled: 1
     path: Assets/Adrian/Scenes/Starting Menu.unity
     guid: dd6a80701f7a43643992ad0c984665ca
+  - enabled: 1
+    path: Assets/Scenes/Demo/built  (DONT DELETE KARA).unity
+    guid: c18d8ba68e00533488a6f20d27ff7607
   - enabled: 1
     path: Assets/Scenes/Demo/Built Cutscene (DONT DELETE KARA).unity
     guid: fb00f748b6bf36d4c9e5b8148c1572c7

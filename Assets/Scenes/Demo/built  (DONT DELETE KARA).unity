@@ -8232,7 +8232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 1854350643}
-  sceneNum: 4
+  sceneNum: 3
   duration: 0.3
   transitionIn: {fileID: 570550666}
   transitionOut: {fileID: 1765353597}
