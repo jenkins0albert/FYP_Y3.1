@@ -946,6 +946,7 @@ GameObject:
   - component: {fileID: 6306852085111178178}
   - component: {fileID: 2382925822880926035}
   - component: {fileID: 8793920388361249104}
+  - component: {fileID: 2542995505888198707}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -1014,9 +1015,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 4
   SprintSpeed: 6
-  RotationSpeed: 5
+  RotationSpeed: 2
   SpeedChangeRate: 10
-  JumpHeight: 0.7
+  JumpHeight: 0
   Gravity: -15
   JumpTimeout: 0.1
   FallTimeout: 0.15
@@ -1029,6 +1030,7 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 1892550850361215433}
   TopClamp: 89
   BottomClamp: -89
+  walkingAndRunning: {fileID: 2542995505888198707}
 --- !u!114 &4220433180131244654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,6 +1235,20 @@ MonoBehaviour:
     item: {fileID: 0}
   - quantity: 0
     item: {fileID: 0}
+--- !u!114 &2542995505888198707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2281971237981506800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c7a7a496d5042debdd198f2268bd76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkClip: {fileID: 8300000, guid: 35e806fa0fdf77e47a3235020be266a0, type: 3}
+  runClip: {fileID: 8300000, guid: 69a1cba5022b43b478202d9b934c61bb, type: 3}
 --- !u!1 &2582531499716275705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,7 +1554,7 @@ MonoBehaviour:
   dialoguearea: {fileID: 8654872738415750450}
   playerController: {fileID: 2663490691805589807}
   isDialogueactive: 0
-  typingspeed: 0.05
+  typingspeed: 0.01
   animator: {fileID: 5616506174815505640}
 --- !u!1 &4242203057908632797
 GameObject:
@@ -2720,22 +2736,22 @@ PrefabInstance:
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 57.9205
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -39.76975
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7816117357317638203, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}

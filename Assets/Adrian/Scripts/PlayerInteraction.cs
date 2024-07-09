@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 using Inventory;
 using Inventory.UI;
 using Inventory.Model;
-using static UnityEditor.Progress;
+
 
 public class PlayerInteraction : MonoBehaviour
 {
