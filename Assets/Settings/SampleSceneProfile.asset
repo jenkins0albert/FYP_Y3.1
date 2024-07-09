@@ -25,11 +25,15 @@ MonoBehaviour:
   scatter:
 <<<<<<< HEAD
     m_OverrideState: 1
+<<<<<<< HEAD
     m_Value: 0.327
 =======
     m_OverrideState: 0
     m_Value: 0.203
 >>>>>>> 9c5861dc64f6a353e5e7638eba3b062d11ea3a79
+=======
+    m_Value: 0.628
+>>>>>>> 286cf00f7892d430b37c94f443fdf23c76a95bb3
   clamp:
     m_OverrideState: 0
     m_Value: 65471.36
@@ -74,6 +78,7 @@ MonoBehaviour:
   intensity:
     m_OverrideState: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Value: 0.462
   smoothness:
     m_OverrideState: 1
@@ -81,6 +86,13 @@ MonoBehaviour:
 =======
     m_Value: 0.3
   smoothness:
+=======
+    m_Value: 0.424
+  smoothness:
+    m_OverrideState: 1
+    m_Value: 0.956
+  rounded:
+>>>>>>> 286cf00f7892d430b37c94f443fdf23c76a95bb3
     m_OverrideState: 1
     m_Value: 0.75
 >>>>>>> 9c5861dc64f6a353e5e7638eba3b062d11ea3a79
@@ -105,7 +117,11 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
+<<<<<<< HEAD
     m_Value: 0.4
+=======
+    m_Value: 0.835
+>>>>>>> 286cf00f7892d430b37c94f443fdf23c76a95bb3
   response:
     m_OverrideState: 1
     m_Value: 0.8
@@ -223,7 +239,7 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.21
   clamp:
     m_OverrideState: 1
     m_Value: 0.05
