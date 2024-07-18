@@ -9,12 +9,13 @@ using UnityEngine.SceneManagement;
 using Inventory;
 using Inventory.UI;
 using Inventory.Model;
+using System;
 
 
 public class PlayerInteraction : MonoBehaviour
 {
 
-    
+
     public bool bagCollected = false;
 
     [SerializeField]
@@ -22,11 +23,11 @@ public class PlayerInteraction : MonoBehaviour
 
     public float PlayerReach = 3f;
     Interactable currentInteractable;
-    
+
 
     private GameObject _mainCamera;
 
-    
+
     private DialogueManager dialogueCheck;
     public GameObject dialogueManager;
 
@@ -43,6 +44,29 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject phone;
     public TextMeshProUGUI phoneText;
 
+    public GameObject MenuUI;
+    public GameObject confirmQuit;
+    public bool MenuOpen = false;
+
+    public void OnOptions()
+    {
+        if (MenuOpen == false)
+        {
+            MenuUI.SetActive(true);
+            confirmQuit.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
+            MenuOpen = true;
+            Time.timeScale = 0;
+        }
+
+        else 
+        {
+            MenuOpen = false;
+            MenuUI.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1;
+        }
+    }
     public void OnInteract()
     {
 

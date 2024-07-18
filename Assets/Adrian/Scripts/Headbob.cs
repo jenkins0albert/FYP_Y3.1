@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
@@ -16,7 +17,8 @@ public class Headbob : MonoBehaviour
     [SerializeField]
     private FirstPersonController playerController;
 
-    
+    public bool camShakeEnable = true;
+
     Vector3 StartPos;
     
     private void Start()
@@ -26,8 +28,25 @@ public class Headbob : MonoBehaviour
 
     private void Update()
     {
-        CheckHeadbob();
-        StopHeadbob();
+        if (camShakeEnable == true)
+        {
+            CheckHeadbob();
+            StopHeadbob();
+        }
+    }
+
+    public void EnableCamShake()
+    {
+        if (camShakeEnable == true)
+        {
+            camShakeEnable = false;
+
+        }
+
+        else
+        {
+            camShakeEnable = true; 
+        }
     }
 
     private void CheckHeadbob()
