@@ -78,6 +78,8 @@ namespace Inventory
             uiInventory.OnStartDragging += HandleDragging;
             uiInventory.OnItemRequested += HandleItemRequest;
 
+            
+
 
         }
 
@@ -87,18 +89,23 @@ namespace Inventory
 
             if (inventoryItem.IsEmpty)
                 return;
-            IItemAction itemAction = inventoryItem.item as IItemAction;
-            if (itemAction != null)
-            {
-                itemAction.PerformAction(gameObject, null);
-            }
 
             IDestroyable destroyableItem = inventoryItem.item as IDestroyable;
             if (destroyableItem != null)
             {
                 inventoryData.RemoveItem(itemIndex, 1);
             }
+
+            IItemAction itemAction = inventoryItem.item as IItemAction;
+            if (itemAction != null)
+            {
+                itemAction.PerformAction(gameObject, inventoryItem.itemState);
+            }
+
+            
         }
+
+       
 
         private void HandleDragging(int itemIndex)
         {

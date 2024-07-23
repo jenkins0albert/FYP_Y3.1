@@ -91,9 +91,16 @@ namespace Inventory.UI
                 uiItem.OnItemDragEnd += HandleEndDrag;
                 uiItem.OnRightSelectItem += HandleShowItemAction;
 
+                
+
             }
 
 
+        }
+
+        private void HandleUnequip(UIInventoryItem item)
+        {
+            throw new NotImplementedException();
         }
 
         private void HandleShowItemAction(UIInventoryItem inventoryItemUI)
