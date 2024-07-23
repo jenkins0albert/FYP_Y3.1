@@ -98,7 +98,14 @@ namespace Inventory.UI
 
         private void HandleShowItemAction(UIInventoryItem inventoryItemUI)
         {
-            Debug.Log(inventoryItemUI.name);
+            int index = listOfItems.IndexOf(inventoryItemUI);
+            if (index == -1)
+            {
+
+                return;
+            }
+
+            OnItemRequested?.Invoke(index);
         }
 
         private void HandleEndDrag(UIInventoryItem inventoryItemUI)

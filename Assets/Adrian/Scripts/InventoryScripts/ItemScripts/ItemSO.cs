@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 namespace Inventory.Model
 {
     [CreateAssetMenu]
-    public class ItemSO : ScriptableObject
+    public abstract class ItemSO : ScriptableObject
     {
         public int myProperty { get; set; }
 
@@ -27,8 +28,20 @@ namespace Inventory.Model
         [field: SerializeField]
         public Sprite sprite { get; set; }
 
+        [field: SerializeField]
+        public List<ItemParameter> DefaultParametersList { get; set; }
 
 
+    }
 
+    [Serializable]
+    public struct ItemParameter : IEquatable<ItemParameter>
+    {
+        public ItemParameters itemParameter;
+        public float value;
+        public bool Equals(ItemParameter other)
+        {
+            return other.itemParameter == itemParameter;
+        }
     }
 }
