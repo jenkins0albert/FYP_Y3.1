@@ -38,7 +38,7 @@ namespace Inventory.Model
     public struct ItemParameter : IEquatable<ItemParameter>
     {
         public ItemParameters itemParameter;
-        public float value;
+        public GameObject Object;
         public bool Equals(ItemParameter other)
         {
             return other.itemParameter == itemParameter;
