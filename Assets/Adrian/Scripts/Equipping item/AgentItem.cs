@@ -24,9 +24,12 @@ public class AgentItem : MonoBehaviour
         }
         this.item = itemItemSO;
         this.itemCurrentState = new List<ItemParameter>(itemState);
-        ModifyParameter();
+
+        //ModifyParameter();
     }
 
+
+    /*
     private void ModifyParameter()
     {
         foreach (var parameter in parametersToModify)
@@ -44,4 +47,6 @@ public class AgentItem : MonoBehaviour
             }
         }
     }
+    */
+    
 }
