@@ -19,6 +19,10 @@ namespace Inventory
         [SerializeField]
         private GameObject phoneUI;
 
+        [SerializeField]
+        private GameObject optionsUI;
+
+
 
         public bool InventoryOpen = false;
         [SerializeField]
@@ -78,13 +82,63 @@ namespace Inventory
             uiInventory.OnStartDragging += HandleDragging;
             uiInventory.OnItemRequested += HandleItemRequest;
 
+            
+
 
         }
 
         private void HandleItemRequest(int itemIndex)
         {
+            InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+
+            if (inventoryItem.IsEmpty)
+                return;
+
+
+            IItemAction itemAction = inventoryItem.item as IItemAction;
+            if (itemAction != null)
+            {
+                
+                uiInventory.ShowItemAction(itemIndex);
+                uiInventory.AddAction(itemAction.ActionName, () => PerformAction(itemIndex));
+
+            }
+
+            IDestroyable destroyableItem = inventoryItem.item as IDestroyable;
+            if (destroyableItem != null)
+            {
+                Debug.Log("destroy");
+                //inventoryData.RemoveItem(itemIndex, 1);
+            }
+
 
         }
+
+        public void PerformAction(int itemIndex)
+        {
+            InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+
+            if (inventoryItem.IsEmpty)
+                return;
+
+            IDestroyable destroyableItem = inventoryItem.item as IDestroyable;
+            if (destroyableItem != null)
+            {
+                inventoryData.RemoveItem(itemIndex, 1);
+            }
+
+            IItemAction itemAction = inventoryItem.item as IItemAction;
+            if (itemAction != null)
+            {
+                itemAction.PerformAction(gameObject, inventoryItem.itemState);
+                if (inventoryData.GetItemAt(itemIndex).IsEmpty)
+                {
+                    uiInventory.ResetSelection();
+                }
+                    
+            }
+        }
+       
 
         private void HandleDragging(int itemIndex)
         {
@@ -125,6 +179,8 @@ namespace Inventory
                 bagUI.SetActive(false);
                 phoneUI.SetActive(false);
 
+                optionsUI.SetActive(false);
+
                 uiInventory.Show();
                 foreach (var item in inventoryData.GetCurrentInventoryState())
                 {
@@ -139,7 +195,7 @@ namespace Inventory
             {
                 bagUI.SetActive(true);
                 phoneUI.SetActive(true);
-
+                optionsUI.SetActive(true);
                 InventoryOpen = false;
                 uiInventory.Hide();
                 Cursor.lockState = CursorLockMode.Locked;

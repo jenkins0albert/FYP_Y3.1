@@ -30,6 +30,10 @@ namespace Inventory.UI
         public event Action<int> OnDescriptionRequested, OnItemRequested, OnStartDragging;
         public event Action<int, int> OnSwapItems;
 
+        [SerializeField]
+        private ItemUiAction actionpanel;
+
+
         private int currentlyDraggedInt = -1;
         private void Awake()
         {
@@ -47,6 +51,8 @@ namespace Inventory.UI
 
             ResetSelection();
 
+            
+
         }
         public void ResetSelection()
         {
@@ -60,11 +66,13 @@ namespace Inventory.UI
             {
                 item.Deselect();
             }
+            actionpanel.Toggle(false);
         }
         public void Hide()
         {
             gameObject.SetActive(false);
             ResetDraggedItem();
+            actionpanel.Toggle(false);
 
         }
 
@@ -76,6 +84,18 @@ namespace Inventory.UI
             }
         }
 
+        public void ShowItemAction(int itemindex)
+        {
+            actionpanel.Toggle(true);
+            actionpanel.transform.position = listOfItems[itemindex].transform.position;
+        }
+
+        
+
+        public void AddAction(string actionname, Action performaction)
+        {
+            actionpanel.AddButtonUI(actionname, performaction);
+        }
         public void InitializeInventoryItem(int inventorysize)
         {
             for (int i = 0; i < inventorysize; i++)
@@ -91,14 +111,28 @@ namespace Inventory.UI
                 uiItem.OnItemDragEnd += HandleEndDrag;
                 uiItem.OnRightSelectItem += HandleShowItemAction;
 
+                
+
             }
 
 
         }
 
+        private void HandleUnequip(UIInventoryItem item)
+        {
+            throw new NotImplementedException();
+        }
+
         private void HandleShowItemAction(UIInventoryItem inventoryItemUI)
         {
-            Debug.Log(inventoryItemUI.name);
+            int index = listOfItems.IndexOf(inventoryItemUI);
+            if (index == -1)
+            {
+
+                return;
+            }
+
+            OnItemRequested?.Invoke(index);
         }
 
         private void HandleEndDrag(UIInventoryItem inventoryItemUI)
