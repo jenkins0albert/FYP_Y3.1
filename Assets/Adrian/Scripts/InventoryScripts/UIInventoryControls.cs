@@ -5,6 +5,7 @@ using Inventory.UI;
 using UnityEngine;
 using Inventory.Model;
 using UnityEngine.Analytics;
+using System.Text;
 
 namespace Inventory
 {
@@ -125,6 +126,11 @@ namespace Inventory
             if (destroyableItem != null)
             {
                 inventoryData.RemoveItem(itemIndex, 1);
+                
+               
+
+                ShowInventory();
+
             }
 
             IItemAction itemAction = inventoryItem.item as IItemAction;
@@ -169,6 +175,20 @@ namespace Inventory
             uiInventory.UpdateDescription(itemIndex, item.sprite, item.Name, item.Description);
 
         }
+        private string PrepareDescription(InventoryItem inventoryItem)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(inventoryItem.item.Description);
+            sb.AppendLine();
+            for (int i = 0; i < inventoryItem.itemState.Count; i++)
+            {
+                sb.Append($"{inventoryItem.itemState[i].itemParameter.ParameterName} " +
+                    $": {inventoryItem.itemState[i].itemName} / " +
+                    $"{inventoryItem.item.DefaultParametersList[i].itemName}");
+                sb.AppendLine();
+            }
+            return sb.ToString();
+        }
 
         public void ShowInventory()
         {
@@ -178,7 +198,6 @@ namespace Inventory
 
                 bagUI.SetActive(false);
                 phoneUI.SetActive(false);
-
                 optionsUI.SetActive(false);
 
                 uiInventory.Show();

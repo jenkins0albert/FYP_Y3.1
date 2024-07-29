@@ -28,6 +28,7 @@ namespace Inventory.Model
         [field: SerializeField]
         public Sprite sprite { get; set; }
 
+
         [field: SerializeField]
         public List<ItemParameter> DefaultParametersList { get; set; }
 
@@ -38,10 +39,14 @@ namespace Inventory.Model
     public struct ItemParameter : IEquatable<ItemParameter>
     {
         public ItemParameters itemParameter;
-        public GameObject Object;
+        public GameObject equipObject;
+        public string itemName;
+        
         public bool Equals(ItemParameter other)
         {
             return other.itemParameter == itemParameter;
         }
+
+       
     }
 }

@@ -26,6 +26,9 @@ namespace Inventory.Model
             }
             return false;
         }
+
+        
+
     }
 
     public interface IDestroyable
@@ -38,13 +41,10 @@ namespace Inventory.Model
         public string ActionName { get; }
         public AudioClip actionSFX { get; }
         bool PerformAction(GameObject character, List<ItemParameter> itemState);
+
+
     }
 
 
-    [Serializable]
-    public class EquipData
-    {
-        public ItemAnimateSO animateItem;
-        
-    }
+    
 }

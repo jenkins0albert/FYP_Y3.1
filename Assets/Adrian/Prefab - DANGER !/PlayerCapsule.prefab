@@ -2046,6 +2046,7 @@ GameObject:
   - component: {fileID: 2382925822880926035}
   - component: {fileID: 8793920388361249104}
   - component: {fileID: 2542995505888198707}
+  - component: {fileID: 2420252723734316302}
   m_Layer: 8
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -2277,7 +2278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a597383c36da2b4e91f12683a4a0145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bagCollected: 0
+  bagCollected: 1
   inventoryData: {fileID: 11400000, guid: 39571388cee5b7143bd81ecb178fd0fd, type: 2}
   PlayerReach: 2.5
   dialogueManager: {fileID: 4185119501227840626}
@@ -2360,6 +2361,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkClip: {fileID: 8300000, guid: 35e806fa0fdf77e47a3235020be266a0, type: 3}
   runClip: {fileID: 8300000, guid: 69a1cba5022b43b478202d9b934c61bb, type: 3}
+--- !u!114 &2420252723734316302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2281971237981506800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b7e07a6c8a1414eb5aa56825a1353e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  inventoryData: {fileID: 0}
+  parametersToModify: []
+  itemCurrentState: []
+  itemSpawn: {fileID: 6994793524931583758}
 --- !u!1 &2815907110070352904
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,6 +3919,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5864732228553330758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6994793524931583758}
+  m_Layer: 0
+  m_Name: NestItemInventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6994793524931583758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5864732228553330758}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.121, y: -0.039000034, z: 0.334}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1988314343523542360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5964437771448556626
 GameObject:
   m_ObjectHideFlags: 0
@@ -4730,7 +4779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: (I)
+  m_text: (G)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3be03431e2afc410d8e9c139513f1607, type: 2}
   m_sharedMaterial: {fileID: -6068826067361229991, guid: 3be03431e2afc410d8e9c139513f1607,
@@ -6084,22 +6133,22 @@ PrefabInstance:
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 57.9205
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -39.76975
       objectReference: {fileID: 0}
     - target: {fileID: 7816117357317638203, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
@@ -6455,6 +6504,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3727457164075413440}
+    - targetCorrespondingSourceObject: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6994793524931583758}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9005220659476430823, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
