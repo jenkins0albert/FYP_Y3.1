@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <isStackable>k__BackingField: 0
   <maxStackSize>k__BackingField: 1
-  <Name>k__BackingField: 
-  <Description>k__BackingField: 
+  <Name>k__BackingField: key
+  <Description>k__BackingField: I wonder what this can open...
   <sprite>k__BackingField: {fileID: 21300000, guid: 96b769a8e72560746b20c4ff3e53634d,
     type: 3}
   <DefaultParametersList>k__BackingField:
-  - itemParameter: {fileID: 0}
-    Object: {fileID: 0}
+  - itemParameter: {fileID: 11400000, guid: a1f7159fdca1b234e81e8beb51353b66, type: 2}
+    equipObject: {fileID: 1685164330270112165, guid: f21040bbdf64ffa4594862cdc12278aa,
+      type: 3}
+    itemName: Key
