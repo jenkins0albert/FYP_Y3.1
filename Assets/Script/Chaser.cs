@@ -40,6 +40,15 @@ public class Chaser : MonoBehaviour
     [SerializeField]
     private float chaseFOV = 100.0f; // field of view when being chased
 
+    
+    [SerializeField]
+    private float changeDirectionInterval = 2.0f; // Time before changing direction while patrolling
+
+    private Vector3 patrolDirection;
+    private float patrolTimer;
+
+    [SerializeField]
+    private bool hasStopped = false;
     private void Awake()
     {
         agentComponent = GetComponent<NavMeshAgent>();
@@ -56,15 +65,19 @@ public class Chaser : MonoBehaviour
         }
         //vignette.active = false;
         vignette.intensity.value = vignetteIntensity;
-
+        
         defaultFOV = cinemachineCamera.m_Lens.FieldOfView;
 
         // get the cinemachine noise settings
         noise = cinemachineCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+        
     }
 
     private void Update()
     {
+        vignette.intensity.value = vignetteIntensity;
+
         if (player != null)
         {
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
@@ -81,7 +94,7 @@ public class Chaser : MonoBehaviour
 
                     // set vignette active
                     //vignette.active = true;
-                    vignetteIntensity = 0.7f;
+                    vignetteIntensity = 0.5f;
 
                     // smooth transition for FOV
                     targetFOV = chaseFOV;
@@ -94,13 +107,14 @@ public class Chaser : MonoBehaviour
                     // Update animator parameters
                     animator.SetBool("isWalking", true);
                     animator.SetFloat("Speed", agentComponent.velocity.magnitude);
+                    animator.speed = 1f;
 
                     // Play chasing sound
                     audioManager.PlayChasingSound();
                 }
                 else
                 {
-                    agentComponent.ResetPath();  // stop moving if not facing the player
+                    agentComponent.ResetPath();  // n  if not facing the player
 
                     // set vignette inactive
                     //vignette.active = false;
@@ -111,12 +125,16 @@ public class Chaser : MonoBehaviour
                     targetNoiseAmplitude = 0.0f;
                     noise.m_AmplitudeGain = Mathf.Lerp(noise.m_AmplitudeGain, targetNoiseAmplitude, Time.deltaTime * noiseLerpSpeed);
 
+                    Patrol();
+                    /*
                     // Update animator parameters
+                    
                     animator.SetBool("isWalking", false);
                     animator.SetFloat("Speed", 0f);
 
                     // plays idle sound
                     audioManager.PlayIdleSound();
+                    */
                 }
             }
             else
@@ -132,12 +150,20 @@ public class Chaser : MonoBehaviour
                 targetNoiseAmplitude = 0.0f;
                 noise.m_AmplitudeGain = Mathf.Lerp(noise.m_AmplitudeGain, targetNoiseAmplitude, Time.deltaTime * noiseLerpSpeed);
 
+
+                Patrol();
+                /*
                 // update animator parameters
                 animator.SetBool("isWalking", false);
                 animator.SetFloat("Speed", 0f);
 
                 // plays idle sound
                 audioManager.PlayIdleSound();
+                */
+
+
+
+
             }
         }
         else
@@ -151,12 +177,120 @@ public class Chaser : MonoBehaviour
             targetNoiseAmplitude = 0.0f;
             noise.m_AmplitudeGain = Mathf.Lerp(noise.m_AmplitudeGain, targetNoiseAmplitude, Time.deltaTime * noiseLerpSpeed);
 
+
+            
             // update animator parameters
             animator.SetBool("isWalking", false);
             animator.SetFloat("Speed", 0f);
 
             // plays idle sound
             audioManager.PlayIdleSound();
+            
+           
+
+
         }
+        Debug.Log(animator.GetFloat("Speed"));
+        Debug.Log(animator.GetBool("isWalking"));
+
     }
+    private void Patrol()
+    {
+
+        
+        Vector3 direction;
+
+
+        if (hasStopped == false)
+        {
+            StartCoroutine(CurrentlyPatrolling());
+        }
+
+            // plays idle sound
+            audioManager.PlayIdleSound();
+        
+        
+
+
+        // Move in the current patrol direction
+        direction = patrolDirection;
+
+
+        if (hasStopped == true)
+        {
+            StartCoroutine(PatrolThenStop());
+        }
+        
+;        /*
+        // Change patrol direction at intervals
+        patrolTimer += Time.deltaTime;
+        if (patrolTimer > changeDirectionInterval)
+        {
+            animator.SetBool("isWalking", false);
+            animator.SetFloat("Speed", 0f);
+
+            SetNewPatrolDirection();
+            patrolTimer = 0;
+        }
+        */
+        
+
+
+        // Rotate towards the movement direction
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1f * Time.deltaTime);
+
+
+        transform.position += direction * animator.GetFloat("Speed") * Time.deltaTime;
+        
+    }
+    private IEnumerator CurrentlyPatrolling()
+    {
+        yield return null;
+        // update animator parameters
+        animator.SetBool("isWalking", true);
+        animator.SetFloat("Speed", 3f);
+        animator.speed = 0.5f;
+        yield return new WaitForSeconds(5.0f);
+
+        hasStopped = true;
+    }
+
+    private IEnumerator PatrolThenStop()
+    {
+
+
+        yield return null;
+        
+        Debug.Log("now moving");
+        patrolTimer += Time.deltaTime;
+        
+        if (patrolTimer > changeDirectionInterval)
+        {
+            animator.SetBool("isWalking", false);
+            animator.SetFloat("Speed", 0f);
+
+            yield return new WaitForSeconds(5.0f);
+            
+            patrolTimer = 0;
+            hasStopped = false;
+            SetNewPatrolDirection();
+
+        }
+
+        yield return  null;
+
+
+
+
+
+    }
+    private void SetNewPatrolDirection()
+    {
+        // Randomly set a new direction for patrolling
+        Vector3 randomDirection = Random.insideUnitSphere;
+        randomDirection.y = 0; // Keep movement on the XZ plane
+        patrolDirection = randomDirection;
+    }
+
 }
