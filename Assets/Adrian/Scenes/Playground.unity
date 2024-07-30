@@ -4265,22 +4265,22 @@ PrefabInstance:
     - target: {fileID: 5791012103755713797, guid: eb200631cb9008340be4fc779edeb664,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5791012103755713797, guid: eb200631cb9008340be4fc779edeb664,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5791012103755713797, guid: eb200631cb9008340be4fc779edeb664,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 57.9205
       objectReference: {fileID: 0}
     - target: {fileID: 5791012103755713797, guid: eb200631cb9008340be4fc779edeb664,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -39.76975
       objectReference: {fileID: 0}
     - target: {fileID: 5996990392109629987, guid: eb200631cb9008340be4fc779edeb664,
         type: 3}
@@ -8583,6 +8583,11 @@ PrefabInstance:
       propertyPath: cinemachineCamera
       value: 
       objectReference: {fileID: 1139052113}
+    - target: {fileID: 5722891135288518550, guid: 5d2026d956156b040bbe96446ba1b137,
+        type: 3}
+      propertyPath: vignetteIntensity
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6732018378864858807, guid: 5d2026d956156b040bbe96446ba1b137,
         type: 3}
       propertyPath: m_Name

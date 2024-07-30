@@ -25,7 +25,7 @@ public class Chaser : MonoBehaviour
     private Volume globalVolume;
     private Vignette vignette;
     [SerializeField]
-    private float vignetteIntensity = 0.5f;
+    private float vignetteIntensity = 0.3f;
 
     [SerializeField]
     private CinemachineVirtualCamera cinemachineCamera;
@@ -54,7 +54,7 @@ public class Chaser : MonoBehaviour
         {
             vignette = globalVolume.profile.Add<Vignette>(true);
         }
-        vignette.active = false;
+        //vignette.active = false;
         vignette.intensity.value = vignetteIntensity;
 
         defaultFOV = cinemachineCamera.m_Lens.FieldOfView;
@@ -80,7 +80,8 @@ public class Chaser : MonoBehaviour
                     agentComponent.SetDestination(player.position);
 
                     // set vignette active
-                    vignette.active = true;
+                    //vignette.active = true;
+                    vignetteIntensity = 0.7f;
 
                     // smooth transition for FOV
                     targetFOV = chaseFOV;
@@ -102,8 +103,8 @@ public class Chaser : MonoBehaviour
                     agentComponent.ResetPath();  // stop moving if not facing the player
 
                     // set vignette inactive
-                    vignette.active = false;
-
+                    //vignette.active = false;
+                    vignetteIntensity = 0.3f;
                     targetFOV = defaultFOV;
                     cinemachineCamera.m_Lens.FieldOfView = Mathf.Lerp(cinemachineCamera.m_Lens.FieldOfView, targetFOV, Time.deltaTime * fovLerpSpeed);
 
@@ -122,7 +123,8 @@ public class Chaser : MonoBehaviour
             {
                 agentComponent.ResetPath();  // stops moving if player is out of range
 
-                vignette.active = false;
+                //vignette.active = false;
+                vignetteIntensity = 0.3f;
 
                 targetFOV = defaultFOV;
                 cinemachineCamera.m_Lens.FieldOfView = Mathf.Lerp(cinemachineCamera.m_Lens.FieldOfView, targetFOV, Time.deltaTime * fovLerpSpeed);
@@ -140,7 +142,8 @@ public class Chaser : MonoBehaviour
         }
         else
         {
-            vignette.active = false;
+            //vignette.active = false;
+
 
             targetFOV = defaultFOV;
             cinemachineCamera.m_Lens.FieldOfView = Mathf.Lerp(cinemachineCamera.m_Lens.FieldOfView, targetFOV, Time.deltaTime * fovLerpSpeed);
