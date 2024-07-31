@@ -1437,6 +1437,8 @@ MonoBehaviour:
   cinemachineCamera: {fileID: 0}
   defaultFOV: 40
   chaseFOV: 100
+  changeDirectionInterval: 2
+  hasStopped: 0
 --- !u!54 &2238279343170130999
 Rigidbody:
   m_ObjectHideFlags: 0

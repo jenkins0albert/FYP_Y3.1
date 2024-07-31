@@ -46,11 +46,13 @@ public class Chaser : MonoBehaviour
 
     private Vector3 patrolDirection;
     private float patrolTimer;
+    private Rigidbody rb; // The animals's rigidbody
 
     [SerializeField]
     private bool hasStopped = false;
     private void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         agentComponent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         audioManager = GetComponent<ChaserAudioManager>();
@@ -60,6 +62,7 @@ public class Chaser : MonoBehaviour
             vignette = vignetteComponent;
         }
         else
+        
         {
             vignette = globalVolume.profile.Add<Vignette>(true);
         }
@@ -114,7 +117,7 @@ public class Chaser : MonoBehaviour
                 }
                 else
                 {
-                    agentComponent.ResetPath();  // n  if not facing the player
+                    //agentComponent.ResetPath();  // n  if not facing the player
 
                     // set vignette inactive
                     //vignette.active = false;
@@ -125,7 +128,7 @@ public class Chaser : MonoBehaviour
                     targetNoiseAmplitude = 0.0f;
                     noise.m_AmplitudeGain = Mathf.Lerp(noise.m_AmplitudeGain, targetNoiseAmplitude, Time.deltaTime * noiseLerpSpeed);
 
-                    Patrol();
+                    StartCoroutine(Patrol());
                     /*
                     // Update animator parameters
                     
@@ -139,7 +142,7 @@ public class Chaser : MonoBehaviour
             }
             else
             {
-                agentComponent.ResetPath();  // stops moving if player is out of range
+                //agentComponent.ResetPath();  // stops moving if player is out of range
 
                 //vignette.active = false;
                 vignetteIntensity = 0.3f;
@@ -151,7 +154,7 @@ public class Chaser : MonoBehaviour
                 noise.m_AmplitudeGain = Mathf.Lerp(noise.m_AmplitudeGain, targetNoiseAmplitude, Time.deltaTime * noiseLerpSpeed);
 
 
-                Patrol();
+                StartCoroutine(Patrol());
                 /*
                 // update animator parameters
                 animator.SetBool("isWalking", false);
@@ -194,7 +197,7 @@ public class Chaser : MonoBehaviour
         Debug.Log(animator.GetBool("isWalking"));
 
     }
-    private void Patrol()
+    private IEnumerator Patrol()
     {
 
         
@@ -203,7 +206,7 @@ public class Chaser : MonoBehaviour
 
         if (hasStopped == false)
         {
-            StartCoroutine(CurrentlyPatrolling());
+            yield return StartCoroutine(CurrentlyPatrolling());
         }
 
             // plays idle sound
@@ -218,7 +221,7 @@ public class Chaser : MonoBehaviour
 
         if (hasStopped == true)
         {
-            StartCoroutine(PatrolThenStop());
+            yield return StartCoroutine(PatrolThenStop());
         }
         
 ;        /*
@@ -240,18 +243,20 @@ public class Chaser : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1f * Time.deltaTime);
 
-
         transform.position += direction * animator.GetFloat("Speed") * Time.deltaTime;
         
     }
     private IEnumerator CurrentlyPatrolling()
     {
         yield return null;
+
+        SetNewPatrolDirection();
+
         // update animator parameters
         animator.SetBool("isWalking", true);
         animator.SetFloat("Speed", 3f);
         animator.speed = 0.5f;
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(7.0f);
 
         hasStopped = true;
     }
@@ -267,14 +272,15 @@ public class Chaser : MonoBehaviour
         
         if (patrolTimer > changeDirectionInterval)
         {
+            
             animator.SetBool("isWalking", false);
             animator.SetFloat("Speed", 0f);
 
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(7.0f);
             
             patrolTimer = 0;
             hasStopped = false;
-            SetNewPatrolDirection();
+            
 
         }
 
@@ -289,8 +295,10 @@ public class Chaser : MonoBehaviour
     {
         // Randomly set a new direction for patrolling
         Vector3 randomDirection = Random.insideUnitSphere;
-        randomDirection.y = 0; // Keep movement on the XZ plane
-        patrolDirection = randomDirection;
+        //randomDirection.y = 0; // Keep movement on the XZ plane
+        patrolDirection.x = randomDirection.x;
+        patrolDirection.z = randomDirection.z;
+        
     }
 
 }
