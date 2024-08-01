@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Interactable
   - canPickUp
+  - Drag
   layers:
   - Default
   - TransparentFX
