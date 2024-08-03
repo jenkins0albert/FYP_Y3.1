@@ -32,7 +32,7 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject dialogueManager;
 
     public TextMeshProUGUI hoverText;
-
+    
     public GameObject bagUI;
 
     [SerializeField]
@@ -48,6 +48,8 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject confirmQuit;
     public bool MenuOpen = false;
 
+    [SerializeField]
+    private AgentItem agentItem;
     public void OnOptions()
     {
         if (MenuOpen == false)
@@ -83,6 +85,11 @@ public class PlayerInteraction : MonoBehaviour
         }
 
 
+    }
+
+    public void OnUnequip()
+    {
+        agentItem.UnequipItem();
     }
 
     public void OnPhone()
@@ -257,6 +264,7 @@ public class PlayerInteraction : MonoBehaviour
         dialogueCheck = dialogueManager.GetComponent<DialogueManager>();
 
         hoverText.text = " ";
+
 
     }
 
