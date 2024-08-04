@@ -13,7 +13,7 @@ public class Chaser : MonoBehaviour
     private ChaserAudioManager audioManager;
 
     [SerializeField]
-    private Transform player;
+    private PlayerInteraction player;
 
     [SerializeField]
     private float followDistance = 5.0f;  // distance within which the AI starts to follow
@@ -52,6 +52,8 @@ public class Chaser : MonoBehaviour
     private bool hasStopped = false;
     private void Awake()
     {
+        player = FindObjectOfType<PlayerInteraction>();
+        cinemachineCamera = FindObjectOfType<CinemachineVirtualCamera>();
         rb = GetComponent<Rigidbody>();
         agentComponent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -83,17 +85,17 @@ public class Chaser : MonoBehaviour
 
         if (player != null)
         {
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
 
             if (distanceToPlayer <= followDistance)
             {
                 // checks if the AI is facing the player
-                Vector3 directionToPlayer = (player.position - transform.position).normalized;
+                Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
                 float angle = Vector3.Angle(transform.forward, directionToPlayer);
 
                 if (angle < angleThreshold)
                 {
-                    agentComponent.SetDestination(player.position);
+                    agentComponent.SetDestination(player.transform.position);
 
                     // set vignette active
                     //vignette.active = true;

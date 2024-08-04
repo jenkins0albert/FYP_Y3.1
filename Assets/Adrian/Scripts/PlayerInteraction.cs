@@ -50,6 +50,21 @@ public class PlayerInteraction : MonoBehaviour
 
     [SerializeField]
     private AgentItem agentItem;
+
+    public GameObject allCanvases;
+    
+
+
+    public void SetCanvasActive()
+    {
+        allCanvases.SetActive(true);
+    }
+
+    public void SetCanvasInactive()
+    {
+        allCanvases.SetActive(false);
+    }
+
     public void OnOptions()
     {
         if (MenuOpen == false)

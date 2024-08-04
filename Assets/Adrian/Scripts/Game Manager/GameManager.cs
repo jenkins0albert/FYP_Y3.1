@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +14,9 @@ public class GameManager : MonoBehaviour
     private PlayerInteraction activeplayer;
 
     public static GameManager Instance;
+
+    public GameObject gameOverScreen;
+
     private void Awake()
     {
 
@@ -45,6 +50,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GameOver()
+    {
+        PlayerInput playerinput = activeplayer.GetComponent<PlayerInput>();
+        gameOverScreen.SetActive(true);
+        playerinput.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+        activeplayer.SetCanvasInactive();
+
+    }
+
+    public void RestartScene()
+    {
+        PlayerInput playerinput = activeplayer.GetComponent<PlayerInput>();
+        gameOverScreen.SetActive(false);
+        playerinput.enabled = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        activeplayer.SetCanvasActive();
+
+
+    }
     private void InactivePlayerAndManager()
     {
         activeplayer = FindObjectOfType<PlayerInteraction>();

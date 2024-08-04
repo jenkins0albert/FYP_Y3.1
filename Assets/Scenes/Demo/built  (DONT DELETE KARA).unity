@@ -9782,7 +9782,7 @@ MonoBehaviour:
     dialoguelines:
     - character:
         name: 
-      line: -Wallet collected-
+      line: -You put the wallet in your pocket-
 --- !u!114 &1276642809
 MonoBehaviour:
   m_ObjectHideFlags: 0
