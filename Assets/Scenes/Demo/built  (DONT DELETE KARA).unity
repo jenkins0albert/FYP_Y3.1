@@ -10951,7 +10951,7 @@ MonoBehaviour:
   dialogue:
     dialoguelines:
     - character:
-        name: Exit [E]
+        name: 
       line: I still need something...
 --- !u!114 &1503608517
 MonoBehaviour:

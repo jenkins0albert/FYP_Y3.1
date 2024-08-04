@@ -21,6 +21,7 @@ public class AgentItem : MonoBehaviour
 
     public Transform itemSpawn;
 
+    public string itemCurrentObject;
     public void SetItem(EquippableItemSO itemItemSO, List<ItemParameter> itemState)
     {
 
@@ -45,7 +46,7 @@ public class AgentItem : MonoBehaviour
 
         GameObject itemEquip = this.itemCurrentState[0].equipObject;
 
-        Debug.Log("Item is called = " + itemCurrentState[0].equipObject.name);
+        Debug.Log("Item is called = " + itemCurrentState[0].itemName);
 
         GameObject instantiatedObject = Instantiate(itemEquip, Vector3.zero, Quaternion.identity);
         instantiatedObject.transform.rotation = itemEquip.transform.rotation;
@@ -58,6 +59,8 @@ public class AgentItem : MonoBehaviour
 
         ModifyParameter();
     }
+
+    
     public void UnequipItem()
     {
         if (item != null)
@@ -78,6 +81,11 @@ public class AgentItem : MonoBehaviour
     public void Start()
     {
         unequipText.text = " ";
+    }
+
+    public void Update()
+    {
+        //itemCurrentObject = itemCurrentState[0].itemName;
     }
     private void ModifyParameter()
     {
