@@ -2326,7 +2326,6 @@ MonoBehaviour:
   MenuOpen: 0
   agentItem: {fileID: 2420252723734316302}
   allCanvases: {fileID: 482862509105807788}
-  allCanvasesTrue: 1
 --- !u!114 &8793920388361249104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2397,7 +2396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
-  inventoryData: {fileID: 0}
+  inventoryData: {fileID: 11400000, guid: 39571388cee5b7143bd81ecb178fd0fd, type: 2}
   parametersToModify: []
   itemCurrentState: []
   unequipText: {fileID: 8482322259202126315}
@@ -6524,7 +6523,7 @@ PrefabInstance:
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4499999
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81,
         type: 3}
@@ -6613,7 +6612,7 @@ PrefabInstance:
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4499999
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}

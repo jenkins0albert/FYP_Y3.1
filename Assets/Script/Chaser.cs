@@ -50,7 +50,7 @@ public class Chaser : MonoBehaviour
 
     [SerializeField]
     private bool hasStopped = false;
-    private void Awake()
+    private void Start()
     {
         player = FindObjectOfType<PlayerInteraction>();
         cinemachineCamera = FindObjectOfType<CinemachineVirtualCamera>();
