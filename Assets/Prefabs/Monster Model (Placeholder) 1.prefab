@@ -259,7 +259,7 @@ VisualEffect:
         m_Overridden: 0
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 5.656854, y: 0, z: 0.7907423, w: 1}
+      - m_Value: {x: 5.6334066, y: 0, z: 0, w: 1}
         m_Name: Emissivecolor
         m_Overridden: 1
     m_Uint:
@@ -1469,6 +1469,7 @@ GameObject:
   - component: {fileID: 2238279343170130999}
   - component: {fileID: 3775064592733412915}
   - component: {fileID: 1644202613083061969}
+  - component: {fileID: 6758555810954750757}
   m_Layer: 0
   m_Name: Monster Model (Placeholder) 1
   m_TagString: Untagged
@@ -1547,8 +1548,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  followDistance: 5
-  angleThreshold: 30
+  followDistance: 7
+  angleThreshold: 180
   globalVolume: {fileID: 0}
   vignetteIntensity: 0.5
   cinemachineCamera: {fileID: 0}
@@ -1627,6 +1628,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6758555810954750757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6732018378864858807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9f080cb8e62f14488e68957f4d86da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6749051317495131289
 GameObject:
   m_ObjectHideFlags: 0
