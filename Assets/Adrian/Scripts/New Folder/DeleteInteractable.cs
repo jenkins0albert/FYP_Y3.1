@@ -9,6 +9,8 @@ public class DeleteInteractable : MonoBehaviour
     [SerializeField]
     private List<GameObject> interactable1;
 
+    [SerializeField]
+    private ItemPickup pickup;
 
     public bool bagCollected = false;
     public bool keyCollected = false;
@@ -36,8 +38,19 @@ public class DeleteInteractable : MonoBehaviour
 
     public void CollectKeyForWallet()
     {
-        keyCollected = true;
-        DeleteInteraction(1);
+        if (bagCollected != false)
+        {
+            keyCollected = true;
+            DeleteInteraction(1);
+            pickup.DestroyItem();
+        }
+
+        else 
+        {
+            Debug.Log("");
+                
+        }
+        
     }
 
     public void CollectWalletForDoor()
