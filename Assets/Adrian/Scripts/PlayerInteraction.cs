@@ -125,8 +125,8 @@ public class PlayerInteraction : MonoBehaviour
         else
         {
             phoneOpen = false;
-            
-            StartCoroutine(PhoneActive());
+            phone.GetComponent<Animator>().Play("phoneDOWN");
+            //StartCoroutine(PhoneActive());
             
         }
     }
