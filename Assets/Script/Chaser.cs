@@ -71,7 +71,7 @@ public class Chaser : MonoBehaviour
         //vignette.active = false;
         vignette.intensity.value = vignetteIntensity;
         
-        defaultFOV = cinemachineCamera.m_Lens.FieldOfView;
+        defaultFOV = 40f;
 
         // get the cinemachine noise settings
         noise = cinemachineCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
