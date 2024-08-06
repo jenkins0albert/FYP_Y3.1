@@ -8,6 +8,8 @@ public class TriggerJumpscare : MonoBehaviour
     public Camera jumpscareCamera;    // Reference to the jumpscare camera
     public float jumpscareDuration = 2f;  // Duration of the jumpscare
     public AudioSource jumpscareAudio;
+    public float shakeDuration = 0.5f;    // Duration of the camera shake
+    public float shakeMagnitude = 0.5f;   // Magnitude of the camera shake
 
     [SerializeField]
     public GameManager gameManager;
@@ -15,17 +17,18 @@ public class TriggerJumpscare : MonoBehaviour
     [SerializeField]
     private PlayerInteraction player;
 
+    private Vector3 jumpscareOriginalPos;
+
     public void Start()
     {
-        
         player = FindAnyObjectByType<PlayerInteraction>();
         playerCamera = GameObject.Find("NestedCamera");
         gameManager = FindObjectOfType<GameManager>();
-    }
-    public void Awake()
-    {
 
-        //gameManager = FindObjectOfType<GameManager>();
+        if (jumpscareCamera != null)
+        {
+            jumpscareOriginalPos = jumpscareCamera.transform.localPosition;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,17 +46,36 @@ public class TriggerJumpscare : MonoBehaviour
         {
             jumpscareAudio.Play();
         }
+
         jumpscareCamera.gameObject.SetActive(true);
         // Disable the player's camera
         playerCamera.SetActive(false);
         gameManager.CanvasInactive();
-        // Enable the jumpscare camera
-        
 
+        StartCoroutine(CameraShake(shakeDuration, shakeMagnitude));
         StartCoroutine(EndJumpscare());
     }
 
-    System.Collections.IEnumerator EndJumpscare()
+    IEnumerator CameraShake(float duration, float magnitude)
+    {
+        float elapsed = 0.0f;
+
+        while (elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+
+            jumpscareCamera.transform.localPosition = jumpscareOriginalPos + new Vector3(x, y, 0);
+
+            elapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        jumpscareCamera.transform.localPosition = jumpscareOriginalPos;
+    }
+
+    IEnumerator EndJumpscare()
     {
         // Wait for the duration of the jumpscare
         yield return new WaitForSeconds(jumpscareDuration);
@@ -61,4 +83,3 @@ public class TriggerJumpscare : MonoBehaviour
         gameManager.GameOver();
     }
 }
-
