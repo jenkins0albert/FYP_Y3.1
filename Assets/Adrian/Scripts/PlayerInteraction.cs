@@ -148,8 +148,9 @@ public class PlayerInteraction : MonoBehaviour
         {
             currentInteractable.Interact();
 
+            
             ItemPickup item = currentInteractable.GetComponent<ItemPickup>();
-            if (item != null)
+            if (item != null && item.Quantity != 2)
             {
                 int reminder = inventoryData.AddItem(item.InventoryItem, item.Quantity);
                 if (reminder == 0)
@@ -164,7 +165,7 @@ public class PlayerInteraction : MonoBehaviour
 
             }
 
-
+            
 
 
 

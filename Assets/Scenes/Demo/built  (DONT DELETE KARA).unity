@@ -7284,6 +7284,53 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5310632328066384851, guid: a82bf4f4ef31ec141b2d1fe7f967cb3b, type: 3}
+--- !u!1 &678018744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 678018746}
+  - component: {fileID: 678018745}
+  m_Layer: 0
+  m_Name: Phone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &678018745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678018744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b466b404488108458a236ae94334503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phone: {fileID: 0}
+  phoneText: {fileID: 0}
+  task: Meet them in the forest...
+--- !u!4 &678018746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678018744}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.8711925, y: 0.24135327, z: 3.2676024}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &709739410 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2794388650984863893, guid: 31bea31f859ce40abbb94d035bbee2f3,
@@ -13108,7 +13155,7 @@ MonoBehaviour:
   - {fileID: 2009503514}
   - {fileID: 1276642799}
   - {fileID: 1503608513}
-  pickup: {fileID: 0}
+  pickup: {fileID: 2009503525}
   bagCollected: 0
   keyCollected: 0
 --- !u!4 &1873569980
@@ -13704,6 +13751,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2009503524}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 59ce03794d88c8b4abe17d17c1b12aea,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2009503525}
   m_SourcePrefab: {fileID: 100100000, guid: 59ce03794d88c8b4abe17d17c1b12aea, type: 3}
 --- !u!1 &2009503514 stripped
 GameObject:
@@ -13778,9 +13829,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DeleteInteractable, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 2009503525}
+        m_TargetAssemblyTypeName: ItemPickup, Assembly-CSharp
+        m_MethodName: DestroyItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13793,6 +13844,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1576623754}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1873569979}
+        m_TargetAssemblyTypeName: DeleteInteractable, Assembly-CSharp
+        m_MethodName: CollectKeyForWallet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13865,6 +13928,23 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &2009503525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009503514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a092cb36f968f99429b48453a30dd285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InventoryItem>k__BackingField: {fileID: 11400000, guid: d0eab1009cf6dec4784c31e57e6509c5,
+    type: 2}
+  <Quantity>k__BackingField: 2
+  duration: 0.3
+  itemImage: {fileID: 21300000, guid: 96b769a8e72560746b20c4ff3e53634d, type: 3}
 --- !u!1001 &2022307967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15431,3 +15511,4 @@ SceneRoots:
   - {fileID: 1572118341}
   - {fileID: 294985591}
   - {fileID: 1576623755}
+  - {fileID: 678018746}
