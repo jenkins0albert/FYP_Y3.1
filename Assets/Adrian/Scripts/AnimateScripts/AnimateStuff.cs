@@ -1,17 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class AnimateStuff : MonoBehaviour
 {
-    
     [SerializeField]
     private List<GameObject> animations;
 
     [SerializeField]
+    private AudioClip openSounds;
+
+    [SerializeField]
+    private AudioClip closeSounds;
+
+    [SerializeField]
     private bool open = false;
 
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
 
     public void OpenOven()
     {
@@ -26,51 +40,45 @@ public class AnimateStuff : MonoBehaviour
     public void OpenDrawer2()
     {
         DoTheAnimation(2, "OpenDrawer2", "CloseDrawer2");
-       
     }
 
     public void OpenFreezer()
     {
         DoTheAnimation(3, "OpenFreezer", "CloseFreezer");
-
     }
 
     public void OpenFridge()
     {
         DoTheAnimation(4, "OpenFridge", "CloseFridge");
-
     }
 
-    public void DoTheAnimation(int animationcount, string openanimation, string closeanimation)
+    public void DoTheAnimation(int animationIndex, string openAnimation, string closeAnimation)
     {
-        if (open == false)
-        {
-            Animator animator = animations[animationcount].GetComponent<Animator>();
-            Interactable interactable = animations[animationcount].GetComponent<Interactable>();
-            interactable.hoverMsg = "Close [E]";
-            animator.Play(openanimation);
-            open = true;
-        }
+        Animator animator = animations[animationIndex].GetComponent<Animator>();
+        Interactable interactable = animations[animationIndex].GetComponent<Interactable>();
 
-        else
+        if (open)
         {
-            Animator animator = animations[animationcount].GetComponent<Animator>();
-            Interactable interactable = animations[animationcount].GetComponent<Interactable>();
             interactable.hoverMsg = "Open [E]";
-            animator.Play(closeanimation);
+            animator.Play(closeAnimation);
+            PlaySound(openSounds);
             open = false;
         }
+        else
+        {
+            interactable.hoverMsg = "Close [E]";
+            animator.Play(openAnimation);
+            PlaySound(closeSounds);
+            open = true;
+        }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void PlaySound(AudioClip clip)
     {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (clip != null)
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
     }
 }
