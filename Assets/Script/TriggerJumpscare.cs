@@ -30,6 +30,7 @@ public class TriggerJumpscare : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Jumpscare");
         if (other.CompareTag("Player"))
         {
             JumpscareTrigger();
@@ -43,6 +44,7 @@ public class TriggerJumpscare : MonoBehaviour
         {
             jumpscareAudio.Play();
         }
+        Debug.Log("Jumpscare");
         jumpscareCamera.gameObject.SetActive(true);
         // Disable the player's camera
         playerCamera.SetActive(false);
