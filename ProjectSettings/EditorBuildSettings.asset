@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Adrian/Scenes/testing scenechange.unity
     guid: 67b80fd1041192b428403e452ce373e3
+  - enabled: 1
+    path: Assets/Adrian/Scenes/IdentityAdrian.unity
+    guid: f065fe43b4700324797af93026793f6b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}

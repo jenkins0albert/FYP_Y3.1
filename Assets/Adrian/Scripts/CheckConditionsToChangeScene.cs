@@ -14,6 +14,8 @@ public class CheckConditionsToChangeScene : MonoBehaviour
     [SerializeField]
     private SceneChanger changer;
 
+    
+
     private void Start()
     {
         dialogue = this.GetComponent<DialogueTrigger>();
