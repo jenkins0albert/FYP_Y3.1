@@ -52,7 +52,9 @@ public class PlayerInteraction : MonoBehaviour
     private AgentItem agentItem;
 
     public GameObject allCanvases;
-    
+
+    [SerializeField]
+    public GameObject NestedCamera;
 
 
     public void SetCanvasActive()
@@ -65,6 +67,10 @@ public class PlayerInteraction : MonoBehaviour
         allCanvases.SetActive(false);
     }
 
+    public void SetNestedCameraActive()
+    {
+        NestedCamera.SetActive(true);
+    }
     public void OnOptions()
     {
         if (MenuOpen == false)

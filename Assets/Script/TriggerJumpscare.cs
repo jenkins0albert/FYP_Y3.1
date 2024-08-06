@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class TriggerJumpscare : MonoBehaviour
 {
-    public Camera playerCamera;       // Reference to the player's camera
+    public GameObject playerCamera;       // Reference to the player's camera
     public Camera jumpscareCamera;    // Reference to the jumpscare camera
     public float jumpscareDuration = 2f;  // Duration of the jumpscare
     public AudioSource jumpscareAudio;
 
     [SerializeField]
-    private GameManager gameManager;
+    public GameManager gameManager;
 
     [SerializeField]
     private PlayerInteraction player;
 
     public void Start()
     {
-        gameManager = FindAnyObjectByType<GameManager>();
+        
         player = FindAnyObjectByType<PlayerInteraction>();
+        playerCamera = GameObject.Find("NestedCamera");
+        gameManager = FindAnyObjectByType<GameManager>();
+    }
+    public void Awake()
+    {
+
+        //gameManager = FindAnyObjectByType<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,12 +43,12 @@ public class TriggerJumpscare : MonoBehaviour
         {
             jumpscareAudio.Play();
         }
-
-        // Disable the player's camera
-        playerCamera.gameObject.SetActive(false);
-
-        // Enable the jumpscare camera
         jumpscareCamera.gameObject.SetActive(true);
+        // Disable the player's camera
+        playerCamera.SetActive(false);
+        gameManager.CanvasInactive();
+        // Enable the jumpscare camera
+        
 
         StartCoroutine(EndJumpscare());
     }

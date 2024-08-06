@@ -2326,6 +2326,7 @@ MonoBehaviour:
   MenuOpen: 0
   agentItem: {fileID: 2420252723734316302}
   allCanvases: {fileID: 482862509105807788}
+  NestedCamera: {fileID: 2815907110070352904}
 --- !u!114 &8793920388361249104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2425,7 +2426,7 @@ GameObject:
   - component: {fileID: 3868545684796452400}
   - component: {fileID: 5539035021634991022}
   m_Layer: 0
-  m_Name: PlayerCamera
+  m_Name: NestedCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

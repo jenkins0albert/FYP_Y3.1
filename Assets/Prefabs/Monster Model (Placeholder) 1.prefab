@@ -1469,7 +1469,7 @@ GameObject:
   - component: {fileID: 2238279343170130999}
   - component: {fileID: 3775064592733412915}
   - component: {fileID: 1644202613083061969}
-  - component: {fileID: 6758555810954750757}
+  - component: {fileID: 7877775688174766232}
   m_Layer: 0
   m_Name: Monster Model (Placeholder) 1
   m_TagString: Untagged
@@ -1628,7 +1628,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6758555810954750757
+--- !u!114 &7877775688174766232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1637,9 +1637,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6732018378864858807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb9f080cb8e62f14488e68957f4d86da, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a06876e8622c4553b937606fc768bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCamera: {fileID: 0}
+  jumpscareCamera: {fileID: 0}
+  jumpscareDuration: 2
+  jumpscareAudio: {fileID: 0}
   gameManager: {fileID: 0}
   player: {fileID: 0}
 --- !u!1 &6749051317495131289

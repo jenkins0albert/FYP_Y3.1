@@ -17,8 +17,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject gameOverScreen;
 
+
+    
     private void Awake()
     {
+       
 
         if (Instance != null && Instance != this)
         {
@@ -27,17 +30,17 @@ public class GameManager : MonoBehaviour
 
         }
 
-        else 
+        else
         {
             DontDestroyOnLoad(gameObject);
-            
+
             SceneManager.activeSceneChanged += SpawnPlayerOnSceneLoad;
-            
+
 
             Instance = this;
         }
 
-       
+
 
     }
 
@@ -46,26 +49,34 @@ public class GameManager : MonoBehaviour
         if (scene.name == "Starting Menu")
         {
             // Call your function here
-            
+
         }
     }
 
-    public void GameOver()
+    public void CanvasInactive()
     {
         PlayerInput playerinput = activeplayer.GetComponent<PlayerInput>();
-        gameOverScreen.SetActive(true);
-        playerinput.enabled = false;
-        Cursor.lockState = CursorLockMode.None;
         activeplayer.SetCanvasInactive();
+        playerinput.enabled = false;
+        
+    }
+    public void GameOver()
+    {
+       
+        gameOverScreen.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+
 
     }
 
     public void RestartScene()
     {
         PlayerInput playerinput = activeplayer.GetComponent<PlayerInput>();
+        
         gameOverScreen.SetActive(false);
         playerinput.enabled = true;
 
+        activeplayer.SetNestedCameraActive();  
         Cursor.lockState = CursorLockMode.Locked;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
