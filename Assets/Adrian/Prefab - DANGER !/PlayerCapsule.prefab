@@ -1939,7 +1939,7 @@ GameObject:
   - component: {fileID: 7465898750093279758}
   - component: {fileID: 4394333258002157930}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5033,7 +5033,7 @@ GameObject:
   - component: {fileID: 5228128580779952240}
   - component: {fileID: 6109843371827784608}
   m_Layer: 0
-  m_Name: screen
+  m_Name: screenlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6306,22 +6306,22 @@ PrefabInstance:
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 57.9205
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -39.76975
       objectReference: {fileID: 0}
     - target: {fileID: 7816117357317638203, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
