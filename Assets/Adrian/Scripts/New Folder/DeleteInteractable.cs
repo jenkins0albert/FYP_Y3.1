@@ -12,6 +12,7 @@ public class DeleteInteractable : MonoBehaviour
     [SerializeField]
     private ItemPickup pickup;
 
+    
     public bool bagCollected = false;
     public bool keyCollected = false;
 
@@ -34,6 +35,7 @@ public class DeleteInteractable : MonoBehaviour
     {
         bagCollected = true;
         DeleteInteraction(0);
+        pickup.Quantity = 1;
     }
 
     public void CollectKeyForWallet()
