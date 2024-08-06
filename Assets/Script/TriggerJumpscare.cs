@@ -20,12 +20,12 @@ public class TriggerJumpscare : MonoBehaviour
         
         player = FindAnyObjectByType<PlayerInteraction>();
         playerCamera = GameObject.Find("NestedCamera");
-        gameManager = FindAnyObjectByType<GameManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
     public void Awake()
     {
 
-        //gameManager = FindAnyObjectByType<GameManager>();
+        //gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other)
