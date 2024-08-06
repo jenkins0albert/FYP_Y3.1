@@ -448,13 +448,8 @@ MonoBehaviour:
   - {fileID: 1552666842}
   - {fileID: 2072394348}
   - {fileID: 2000352103}
-<<<<<<< HEAD
   openSounds: {fileID: 0}
   closeSounds: {fileID: 0}
-=======
-  openSounds: {fileID: 8300000, guid: 40d14a81b93914d0c9238f7597598fab, type: 3}
-  closeSounds: {fileID: 8300000, guid: 4e59a43440eca4b4492011d31b12aca2, type: 3}
->>>>>>> c6daa0c4a1bb5ee5edebcf1cb0f7626180990bc7
   open: 0
 --- !u!95 &166951675
 Animator:
@@ -15438,7 +15433,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d4dd549d1bb154b44887e0df599259cc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.15
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -15766,13 +15761,8 @@ MonoBehaviour:
   - {fileID: 166951670}
   - {fileID: 1542351148}
   - {fileID: 1458111409}
-<<<<<<< HEAD
   openSounds: {fileID: 0}
   closeSounds: {fileID: 0}
-=======
-  openSounds: {fileID: 8300000, guid: b98c8b12ffcf840a9a0e047acd5256ff, type: 3}
-  closeSounds: {fileID: 8300000, guid: f4750780d832044c990705eaeba2ff4b, type: 3}
->>>>>>> c6daa0c4a1bb5ee5edebcf1cb0f7626180990bc7
   open: 0
 --- !u!114 &1458111414
 MonoBehaviour:
@@ -17409,13 +17399,8 @@ MonoBehaviour:
   - {fileID: 1552666842}
   - {fileID: 2072394348}
   - {fileID: 2000352103}
-<<<<<<< HEAD
   openSounds: {fileID: 0}
   closeSounds: {fileID: 0}
-=======
-  openSounds: {fileID: 8300000, guid: b98c8b12ffcf840a9a0e047acd5256ff, type: 3}
-  closeSounds: {fileID: 8300000, guid: f4750780d832044c990705eaeba2ff4b, type: 3}
->>>>>>> c6daa0c4a1bb5ee5edebcf1cb0f7626180990bc7
   open: 0
 --- !u!64 &1542351153
 MeshCollider:
@@ -20447,13 +20432,8 @@ MonoBehaviour:
   - {fileID: 1552666842}
   - {fileID: 2072394348}
   - {fileID: 2000352103}
-<<<<<<< HEAD
   openSounds: {fileID: 0}
   closeSounds: {fileID: 0}
-=======
-  openSounds: {fileID: 8300000, guid: 6218c4d937cd3499584e5f8a669a245d, type: 3}
-  closeSounds: {fileID: 8300000, guid: afc28d3ad509442eba71d4888e1774fc, type: 3}
->>>>>>> c6daa0c4a1bb5ee5edebcf1cb0f7626180990bc7
   open: 0
 --- !u!64 &2000352106
 MeshCollider:
@@ -21080,13 +21060,8 @@ MonoBehaviour:
   - {fileID: 1552666842}
   - {fileID: 2072394348}
   - {fileID: 2000352103}
-<<<<<<< HEAD
   openSounds: {fileID: 0}
   closeSounds: {fileID: 0}
-=======
-  openSounds: {fileID: 8300000, guid: 6218c4d937cd3499584e5f8a669a245d, type: 3}
-  closeSounds: {fileID: 8300000, guid: afc28d3ad509442eba71d4888e1774fc, type: 3}
->>>>>>> c6daa0c4a1bb5ee5edebcf1cb0f7626180990bc7
   open: 0
 --- !u!64 &2072394352
 MeshCollider:
