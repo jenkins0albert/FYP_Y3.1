@@ -1175,7 +1175,7 @@ GameObject:
   - component: {fileID: 5981778961259353191}
   - component: {fileID: 1544647484522991922}
   m_Layer: 0
-  m_Name: Monster Model (Placeholder)
+  m_Name: PUT THIS INSIDE THE FOREST
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1348,6 +1348,8 @@ MonoBehaviour:
   jumpscareCamera: {fileID: 0}
   jumpscareDuration: 2
   jumpscareAudio: {fileID: 0}
+  shakeDuration: 0.5
+  shakeMagnitude: 0.5
   gameManager: {fileID: 0}
   player: {fileID: 0}
 --- !u!1 &4200967195831791641
