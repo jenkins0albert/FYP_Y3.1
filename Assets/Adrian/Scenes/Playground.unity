@@ -2487,18 +2487,33 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c386d0ad571ed1d4db7420b0f8bfa8b5,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9120239
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c386d0ad571ed1d4db7420b0f8bfa8b5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9120239
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c386d0ad571ed1d4db7420b0f8bfa8b5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.9120239
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c386d0ad571ed1d4db7420b0f8bfa8b5,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.901821
+      value: 1.4276
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c386d0ad571ed1d4db7420b0f8bfa8b5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7847298
+      value: -1.4175
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c386d0ad571ed1d4db7420b0f8bfa8b5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.8036643
+      value: -0.87483
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c386d0ad571ed1d4db7420b0f8bfa8b5,
         type: 3}
@@ -2543,8 +2558,135 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c386d0ad571ed1d4db7420b0f8bfa8b5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 453888502}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c386d0ad571ed1d4db7420b0f8bfa8b5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 453888501}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c386d0ad571ed1d4db7420b0f8bfa8b5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 453888500}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c386d0ad571ed1d4db7420b0f8bfa8b5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 453888504}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c386d0ad571ed1d4db7420b0f8bfa8b5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 453888503}
   m_SourcePrefab: {fileID: 100100000, guid: c386d0ad571ed1d4db7420b0f8bfa8b5, type: 3}
+--- !u!1 &453888499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c386d0ad571ed1d4db7420b0f8bfa8b5,
+    type: 3}
+  m_PrefabInstance: {fileID: 453888498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &453888500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453888499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a49b27cb497d89428e4d3513cb36904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialoguelines:
+    - character:
+        name: 
+      line: -Car key collected-
+--- !u!114 &453888501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453888499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4288bd98c820cb5488a1ff4752e721f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMsg: Take [E]
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 453888500}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!64 &453888502
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453888499}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!114 &453888503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453888499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a092cb36f968f99429b48453a30dd285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InventoryItem>k__BackingField: {fileID: 0}
+  <Quantity>k__BackingField: 1
+  duration: 0.3
+  itemImage: {fileID: 0}
+--- !u!114 &453888504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453888499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &481897641
 GameObject:
   m_ObjectHideFlags: 0
