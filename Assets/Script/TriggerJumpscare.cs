@@ -9,6 +9,18 @@ public class TriggerJumpscare : MonoBehaviour
     public float jumpscareDuration = 2f;  // Duration of the jumpscare
     public AudioSource jumpscareAudio;
 
+    [SerializeField]
+    private GameManager gameManager;
+
+    [SerializeField]
+    private PlayerInteraction player;
+
+    public void Start()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();
+        player = FindAnyObjectByType<PlayerInteraction>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -39,11 +51,7 @@ public class TriggerJumpscare : MonoBehaviour
         // Wait for the duration of the jumpscare
         yield return new WaitForSeconds(jumpscareDuration);
 
-        // Re-enable the player's camera
-        playerCamera.gameObject.SetActive(true);
-
-        // Disable the jumpscare camera
-        jumpscareCamera.gameObject.SetActive(false);
+        gameManager.GameOver();
     }
 }
 

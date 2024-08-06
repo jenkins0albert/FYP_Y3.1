@@ -2425,7 +2425,7 @@ GameObject:
   - component: {fileID: 3868545684796452400}
   - component: {fileID: 5539035021634991022}
   m_Layer: 0
-  m_Name: cameras
+  m_Name: PlayerCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3130,7 +3130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6079911892773845111}
   m_Layer: 0
-  m_Name: CamaPivot
+  m_Name: CamPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

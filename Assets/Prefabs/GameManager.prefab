@@ -1902,7 +1902,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2406850959797092547
 Transform:
   m_ObjectHideFlags: 0
@@ -1933,3 +1933,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 2281971237981506800, guid: eb200631cb9008340be4fc779edeb664,
     type: 3}
+  gameOverScreen: {fileID: 4008104006974286176}
