@@ -5,7 +5,6 @@ using UnityEngine;
 public class PuzzlePiece : MonoBehaviour
 {
     private bool isDragging = false;
-    private Vector3 offset;
     private Camera mainCamera;
     private float originalY;
     private float pickUpHeight = 0.5f;
@@ -21,7 +20,6 @@ public class PuzzlePiece : MonoBehaviour
     void OnMouseDown()
     {
         isDragging = true;
-        offset = transform.position - GetMouseWorldPos();
         // Lift the puzzle piece when picked up
         transform.position = new Vector3(transform.position.x, originalY + pickUpHeight, transform.position.z);
         // Disable gravity and make it kinematic
@@ -43,21 +41,25 @@ public class PuzzlePiece : MonoBehaviour
     {
         if (isDragging)
         {
-            Vector3 mousePos = GetMouseWorldPos() + offset;
+            // Update the puzzle piece's position based on the mouse position
+            Vector3 mousePos = GetMouseWorldPos();
             transform.position = new Vector3(mousePos.x, transform.position.y, mousePos.z);
 
             // Rotate the piece with right mouse button while dragging
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButton(1))  // Use GetMouseButton to keep rotating while holding the button
             {
-                transform.Rotate(0, 45, 0);
+                transform.Rotate(0, 45 * Time.deltaTime, 0);  // Rotate smoothly
             }
         }
     }
 
     Vector3 GetMouseWorldPos()
     {
+        // Get the mouse position in screen space
         Vector3 mousePoint = Input.mousePosition;
+        // Set the z position to match the puzzle piece's z position
         mousePoint.z = mainCamera.WorldToScreenPoint(transform.position).z;
+        // Convert to world space
         return mainCamera.ScreenToWorldPoint(mousePoint);
     }
 }
