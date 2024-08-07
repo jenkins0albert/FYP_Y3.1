@@ -85,7 +85,7 @@ public class AgentItem : MonoBehaviour
 
     public void Update()
     {
-        //itemCurrentObject = itemCurrentState[0].itemName;
+        itemCurrentObject = itemCurrentState[0].itemName;
     }
     private void ModifyParameter()
     {
@@ -96,8 +96,8 @@ public class AgentItem : MonoBehaviour
         {
             if (itemCurrentState.Contains(parameter))
             {
+                //itemCurrentObject = itemCurrentState[0].itemName;
 
-               
                 int index = itemCurrentState.IndexOf(parameter);
                 
                 

@@ -25,18 +25,20 @@ public class CheckConditionsToChangeScene : MonoBehaviour
     }
     private void Update()
     {
-        //Debug.Log("From check conditions =" + itemcheck.itemCurrentObject);
+        Debug.Log("From check conditions =" + itemcheck.itemCurrentObject);
     }
     public void CheckConditions()
     {
         if (itemcheck.itemCurrentObject == "Key")
         {
+            Debug.Log("It is working");
             changer.ChangeScene();
             itemcheck.UnequipItem();
         }
 
         else
         {
+            Debug.Log("It is not working");
             dialogue.TriggerDialogue();
         }
     }
