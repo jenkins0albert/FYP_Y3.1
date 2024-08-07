@@ -20,5 +20,6 @@ MonoBehaviour:
     type: 3}
   <DefaultParametersList>k__BackingField:
   - itemParameter: {fileID: 11400000, guid: a1f7159fdca1b234e81e8beb51353b66, type: 2}
-    equipObject: {fileID: 0}
+    equipObject: {fileID: 1952279133548917372, guid: e4432317208799d4fb944270b9bc99f2,
+      type: 3}
     itemName: Car Key
