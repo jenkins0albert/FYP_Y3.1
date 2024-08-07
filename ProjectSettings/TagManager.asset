@@ -8,6 +8,7 @@ TagManager:
   - Interactable
   - canPickUp
   - CameraNest
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - PP
   - holdLayer
   - snapSlot
-  - 
+  - surfaceLayer
   - 
   - 
   - 
