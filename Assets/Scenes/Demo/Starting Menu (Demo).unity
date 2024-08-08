@@ -480,6 +480,8 @@ MonoBehaviour:
   - {fileID: 1432258729}
   - {fileID: 143483776}
   - {fileID: 143483773}
+  openSounds: {fileID: 0}
+  closeSounds: {fileID: 0}
   open: 0
 --- !u!64 &33945756
 MeshCollider:
@@ -1193,6 +1195,8 @@ MonoBehaviour:
   - {fileID: 1432258729}
   - {fileID: 143483776}
   - {fileID: 143483773}
+  openSounds: {fileID: 0}
+  closeSounds: {fileID: 0}
   open: 0
 --- !u!64 &143483781
 MeshCollider:
@@ -11116,6 +11120,8 @@ MonoBehaviour:
   - {fileID: 1432258729}
   - {fileID: 143483776}
   - {fileID: 143483773}
+  openSounds: {fileID: 0}
+  closeSounds: {fileID: 0}
   open: 0
 --- !u!95 &917212052
 Animator:
@@ -12955,6 +12961,8 @@ MonoBehaviour:
   - {fileID: 1432258729}
   - {fileID: 143483776}
   - {fileID: 143483773}
+  openSounds: {fileID: 0}
+  closeSounds: {fileID: 0}
   open: 0
 --- !u!64 &1332644864
 MeshCollider:
@@ -13523,6 +13531,8 @@ MonoBehaviour:
   - {fileID: 917212045}
   - {fileID: 33945748}
   - {fileID: 1432258728}
+  openSounds: {fileID: 0}
+  closeSounds: {fileID: 0}
   open: 0
 --- !u!114 &1432258733
 MonoBehaviour:
