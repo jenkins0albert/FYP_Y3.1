@@ -14010,7 +14010,7 @@ MonoBehaviour:
   dialogue:
     dialoguelines:
     - character:
-        name: 
+        name: Enter [E]
       line: -Key needed-
 --- !u!114 &1545541912
 MonoBehaviour:
