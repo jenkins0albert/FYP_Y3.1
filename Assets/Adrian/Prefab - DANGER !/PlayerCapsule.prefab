@@ -2288,7 +2288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a597383c36da2b4e91f12683a4a0145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bagCollected: 1
+  bagCollected: 0
   inventoryData: {fileID: 11400000, guid: 39571388cee5b7143bd81ecb178fd0fd, type: 2}
   PlayerReach: 2.5
   dialogueManager: {fileID: 4185119501227840626}
@@ -6284,22 +6284,22 @@ PrefabInstance:
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 57.9205
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5609769866386774664, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -39.76975
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7816117357317638203, guid: b1a4497d092c98c4d8db704e1012ce5b,
         type: 3}
