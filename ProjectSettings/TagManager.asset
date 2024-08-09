@@ -9,6 +9,7 @@ TagManager:
   - canPickUp
   - CameraNest
   - Ground
+  - PlayerNest
   layers:
   - Default
   - TransparentFX
