@@ -85,7 +85,10 @@ public class AgentItem : MonoBehaviour
 
     public void Update()
     {
+        
         itemCurrentObject = itemCurrentState[0].itemName;
+        
+        
     }
     private void ModifyParameter()
     {

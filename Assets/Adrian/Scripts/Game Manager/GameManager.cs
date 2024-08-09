@@ -82,6 +82,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         activeplayer.SetCanvasActive();
 
+        GameObject capsuleCollider = GameObject.Find("PlayerHitCapsule");
+        CapsuleCollider hitbox = capsuleCollider.GetComponent<CapsuleCollider>();
+        hitbox.enabled = true;
 
     }
     private void InactivePlayerAndManager()

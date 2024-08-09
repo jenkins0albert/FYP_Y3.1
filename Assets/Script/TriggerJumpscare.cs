@@ -36,6 +36,7 @@ public class TriggerJumpscare : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             JumpscareTrigger();
+            
         }
     }
 
@@ -44,7 +45,7 @@ public class TriggerJumpscare : MonoBehaviour
         // Play the sound
         if (jumpscareAudio != null)
         {
-            jumpscareAudio.Play();
+            StartCoroutine(PlayJumpscareAudio());
         }
 
         jumpscareCamera.gameObject.SetActive(true);
@@ -73,6 +74,13 @@ public class TriggerJumpscare : MonoBehaviour
         }
 
         jumpscareCamera.transform.localPosition = jumpscareOriginalPos;
+    }
+
+    IEnumerator PlayJumpscareAudio()
+    {
+        jumpscareAudio.Play();
+        yield return new WaitForSeconds(jumpscareDuration);
+        jumpscareAudio = null ;
     }
 
     IEnumerator EndJumpscare()

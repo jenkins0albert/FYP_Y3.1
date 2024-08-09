@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3437316490417192611}
   - component: {fileID: 398101280000253}
   - component: {fileID: 2056467925479830074}
-  - component: {fileID: 3850311687910252196}
   m_Layer: 0
   m_Name: phon
   m_TagString: Untagged
@@ -108,27 +107,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &3850311687910252196
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154027335115040002}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 303.4268, y: 588.588, z: 25.051792}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &233239710553017568
 GameObject:
   m_ObjectHideFlags: 0
@@ -5378,7 +5356,7 @@ GameObject:
   - component: {fileID: 5023738433183840282}
   - component: {fileID: 8550976241822979674}
   m_Layer: 8
-  m_Name: Capsule
+  m_Name: PlayerHitCapsule
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
