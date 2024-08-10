@@ -14787,7 +14787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4288bd98c820cb5488a1ff4752e721f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverMsg: 
+  hoverMsg: Take [E]
   onInteraction:
     m_PersistentCalls:
       m_Calls:
