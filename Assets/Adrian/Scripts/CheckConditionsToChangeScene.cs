@@ -27,9 +27,26 @@ public class CheckConditionsToChangeScene : MonoBehaviour
     {
         Debug.Log("From check conditions =" + itemcheck.itemCurrentObject);
     }
+
     public void CheckConditions()
     {
         if (itemcheck.itemCurrentObject == "Key")
+        {
+            Debug.Log("It is working");
+            changer.ChangeScene();
+            itemcheck.UnequipItem();
+        }
+
+        else
+        {
+            Debug.Log("It is not working");
+            dialogue.TriggerDialogue();
+        }
+    }
+
+    public void CheckNewDoorConditions()
+    {
+        if (itemcheck.itemCurrentObject == "Car Key")
         {
             Debug.Log("It is working");
             changer.ChangeScene();

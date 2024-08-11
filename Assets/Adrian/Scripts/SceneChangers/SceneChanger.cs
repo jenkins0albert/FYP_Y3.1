@@ -48,7 +48,6 @@ public class SceneChanger : MonoBehaviour
     {
         
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("asdsadasd");
         SetTransInactive();
 
 

@@ -12,6 +12,12 @@ public class PuzzleGameInteraction : MonoBehaviour
     [SerializeField]
     private Outline outline;
 
+    [SerializeField]
+    private GameObject colliders; // Prevents the puzzle pieces from falling out of the area
+
+    [SerializeField]
+    private GameObject puzzlePlaceholder;
+
     private bool isPuzzleActive = false;
 
     void Start()
@@ -28,7 +34,23 @@ public class PuzzleGameInteraction : MonoBehaviour
             backButton.SetActive(false);
         }
 
-        player = FindObjectOfType<PlayerInteraction>();
+        // Ensure the colliders are initially inactive
+        if (colliders != null)
+        {
+            colliders.SetActive(false);
+        }
+
+        // Ensure that the placeholders are initially inactive
+        if (puzzlePlaceholder != null)
+        {
+            puzzlePlaceholder.SetActive(false);
+        }
+
+        // Ensure the player interaction is set
+        if (player == null)
+        {
+            player = FindObjectOfType<PlayerInteraction>();
+        }
     }
 
     public void ActivatePuzzle()
@@ -36,11 +58,6 @@ public class PuzzleGameInteraction : MonoBehaviour
         if (!isPuzzleActive)
         {
             // Switch to the puzzle camera
-            if (player != null)
-            {
-                player.gameObject.SetActive(false);
-            }
-
             if (puzzleCamera != null)
             {
                 puzzleCamera.gameObject.SetActive(true);
@@ -56,8 +73,29 @@ public class PuzzleGameInteraction : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
+            // Activates the colliders
+            if (colliders != null)
+            {
+                colliders.SetActive(true);
+            }
+
+            // Activates the Puzzle Placeholder
+            if (puzzlePlaceholder != null)
+            {
+                puzzlePlaceholder.SetActive(true);
+            }
+
+            // Disable player interaction
+            if (player != null)
+            {
+                player.gameObject.SetActive(false);
+            }
+
             isPuzzleActive = true;
-            outline.enabled = false; // Turns off the outline
+            if (outline != null)
+            {
+                outline.enabled = false; // Turns off the outline
+            }
         }
     }
 
@@ -66,11 +104,6 @@ public class PuzzleGameInteraction : MonoBehaviour
         if (isPuzzleActive)
         {
             // Switch back to the player
-            if (player != null)
-            {
-                player.gameObject.SetActive(true);
-            }
-
             if (puzzleCamera != null)
             {
                 puzzleCamera.gameObject.SetActive(false);
@@ -86,8 +119,29 @@ public class PuzzleGameInteraction : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
+            // Deactivate the collider
+            if (colliders != null)
+            {
+                colliders.SetActive(false);
+            }
+
+            // Deactivate the Puzzle Placeholder
+            if (puzzlePlaceholder != null)
+            {
+                puzzlePlaceholder.SetActive(false);
+            }
+
+            // Enable player interaction
+            if (player != null)
+            {
+                player.gameObject.SetActive(true);
+            }
+
             isPuzzleActive = false;
-            outline.enabled = true; // Turns on the outline
+            if (outline != null)
+            {
+                outline.enabled = true; // Turns on the outline if it's not in the Puzzle Area
+            }
         }
     }
 }

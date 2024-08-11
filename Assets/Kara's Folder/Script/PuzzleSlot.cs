@@ -5,53 +5,60 @@ using UnityEngine;
 public class PuzzleSlot : MonoBehaviour
 {
     public Transform correctPuzzlePiece;
+    private float rotationTolerance = 0.7f; // Adjust this value if necessary
+
+    [SerializeField]
     private bool isCorrect = false;
-    private float rotationTolerance = 1f; // Adjust this value if necessary
+
+    [SerializeField]
+    private QuestManager questManager; // Reference to the Quest Manager
 
     void OnTriggerStay(Collider other)
     {
-        Debug.Log("Trigger Stay"); // Debug statement
-
         if (other.transform == correctPuzzlePiece)
         {
-            Debug.Log("Correct Puzzle Piece Entered"); // Debug statement
-
             float angleDifference = Mathf.Abs(Mathf.DeltaAngle(other.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.y));
+
             if (angleDifference <= rotationTolerance)
             {
-                Debug.Log("Correct Rotation"); // Debug statement
-
+                // Snap the puzzle piece to the slot
                 other.transform.position = transform.position;
-                other.transform.rotation = transform.rotation; // Ensure the rotation is also set correctly
+                other.transform.rotation = transform.rotation;
+
+                // Get the Rigidbody and set it to kinematic
                 Rigidbody rb = other.GetComponent<Rigidbody>();
+
                 if (rb != null)
                 {
                     rb.useGravity = false;
                     rb.isKinematic = true;
                 }
-                other.GetComponent<PuzzlePiece>().enabled = false;
-                Collider col = other.GetComponent<Collider>();
-                if (col != null)
+
+                // Set isCorrect to true
+                if (!isCorrect)
                 {
-                    col.enabled = false; // Disable the collider to prevent further dragging
+                    isCorrect = true;
+
+                    // Remove the PuzzlePiece script to prevent further dragging
+                    PuzzlePiece piece = other.GetComponent<PuzzlePiece>();
+                    if (piece != null)
+                    {
+                        Destroy(piece);  // Remove the script component
+                    }
+
+                    // Notify the Quest Manager that this puzzle slot is completed
+                    if (questManager != null)
+                    {
+                        questManager.CheckPuzzleCompletion();
+                    }
                 }
-                isCorrect = true;
-                Debug.Log("Puzzle Piece Locked"); // Debug statement
             }
-            else
-            {
-                Debug.Log("Incorrect Rotation"); // Debug statement
-                Debug.Log($"Angle Difference: {angleDifference}"); // Debug statement
-            }
-        }
-        else
-        {
-            Debug.Log("Incorrect Puzzle Piece"); // Debug statement
         }
     }
+
+    public bool IsCorrect()
+    {
+        return isCorrect;
+    }
+
 }
-
-
-
-
-
