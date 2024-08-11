@@ -3556,7 +3556,7 @@ GameObject:
   - component: {fileID: 690359403}
   - component: {fileID: 690359402}
   m_Layer: 0
-  m_Name: Phone
+  m_Name: Phone Tasks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3576,7 +3576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phone: {fileID: 0}
   phoneText: {fileID: 0}
-  task: Survive
+  task: Use the key to open a door in the forest...
 --- !u!4 &690359403
 Transform:
   m_ObjectHideFlags: 0
