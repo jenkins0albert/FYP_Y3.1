@@ -18364,7 +18364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 1854350643}
-  sceneNum: 8
+  sceneNum: 7
   duration: 0.3
   transitionIn: {fileID: 570550666}
   transitionOut: {fileID: 1765353597}
@@ -31265,9 +31265,9 @@ MonoBehaviour:
   onInteraction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2128721715}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: Interact
+      - m_Target: {fileID: 2128721716}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
